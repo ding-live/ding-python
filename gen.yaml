@@ -30,6 +30,6 @@ python:
       webhooks: models/webhooks
   installationURL: https://github.com/ding-live/ding-python.git
   maxMethodParams: 4
-  packageName: ding_api_sdk
+  packageName: ding
   published: true
   repoSubDirectory: .
