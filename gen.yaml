@@ -15,7 +15,7 @@ features:
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 python:
-  version: 0.4.0
+  version: 0.3.0
   author: Ding
   clientServerStatusCodesAsErrors: true
   description: Python Client SDK
@@ -30,6 +30,6 @@ python:
       webhooks: models/webhooks
   installationURL: https://github.com/ding-live/ding-python.git
   maxMethodParams: 4
-  packageName: ding
+  packageName: ding_client_sdk
   published: true
   repoSubDirectory: .
