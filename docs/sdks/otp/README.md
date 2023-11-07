@@ -7,75 +7,36 @@ Send OTP codes to your users using their phone numbers.
 
 ### Available Operations
 
-* [check](#check) - Check an authentication code
-* [create_autentication](#create_autentication) - Create an authentication
-* [retry](#retry) - Retry an authentication
+* [post_authentication](#post_authentication) - Create an authentication
+* [post_check](#post_check) - Check an authentication code
+* [post_retry](#post_retry) - Retry an authentication
 
-## check
-
-Check an authentication code
-
-### Example Usage
-
-```python
-import test
-from test.models import components
-
-s = test.Test(
-    api_key="YOUR_API_KEY",
-)
-
-req = components.CreateCheckRequest(
-    authentication_uuid='e0e7b0e9-739d-424b-922f-1c2cb48ab077',
-    check_code='123456',
-    customer_uuid='8f1196d5-806e-4b71-9b24-5f96ec052808',
-)
-
-res = s.otp.check(req)
-
-if res.create_check_response is not None:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [components.CreateCheckRequest](../../models/shared/createcheckrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-
-
-### Response
-
-**[operations.CheckResponse](../../models/operations/checkresponse.md)**
-
-
-## create_autentication
+## post_authentication
 
 Create an authentication
 
 ### Example Usage
 
 ```python
-import test
-from test.models import components
+import ding
+from ding.models import shared
 
-s = test.Test(
-    api_key="YOUR_API_KEY",
+s = ding.Ding(
+    api_key="",
 )
 
-req = components.CreateAuthenticationRequest(
+req = shared.CreateAuthenticationRequest(
     app_realm='1234567890',
     app_version='1.0.0',
     callback_url='https://example.com/callback',
-    customer_uuid='eae192ab-9e1e-4b21-b5b1-bfcb79a32fcc',
+    customer_uuid='28591d9e-a825-47f6-ab11-1a61726305bf',
     device_id='1234567890',
     device_model='iPhone 15 Pro',
     os_version='13.2.1',
     phone_number='+1234567890',
 )
 
-res = s.otp.create_autentication(req)
+res = s.otp.post_authentication(req)
 
 if res.create_authentication_response is not None:
     # handle response
@@ -84,36 +45,75 @@ if res.create_authentication_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [components.CreateAuthenticationRequest](../../models/shared/createauthenticationrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [shared.CreateAuthenticationRequest](../../models/shared/createauthenticationrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
 
-**[operations.CreateAutenticationResponse](../../models/operations/createautenticationresponse.md)**
+**[operations.PostAuthenticationResponse](../../models/operations/postauthenticationresponse.md)**
 
 
-## retry
+## post_check
+
+Check an authentication code
+
+### Example Usage
+
+```python
+import ding
+from ding.models import shared
+
+s = ding.Ding(
+    api_key="",
+)
+
+req = shared.CreateCheckRequest(
+    authentication_uuid='b96e4807-1510-4bd2-8106-8ca1a09d679e',
+    check_code='123456',
+    customer_uuid='b193166e-1ee3-41d3-9acb-9c9ac7f10712',
+)
+
+res = s.otp.post_check(req)
+
+if res.create_check_response is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [shared.CreateCheckRequest](../../models/shared/createcheckrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+
+
+### Response
+
+**[operations.PostCheckResponse](../../models/operations/postcheckresponse.md)**
+
+
+## post_retry
 
 Retry an authentication
 
 ### Example Usage
 
 ```python
-import test
-from test.models import components
+import ding
+from ding.models import shared
 
-s = test.Test(
-    api_key="YOUR_API_KEY",
+s = ding.Ding(
+    api_key="",
 )
 
-req = components.RetryAuthenticationRequest(
-    authentication_uuid='a74ee547-564d-487a-91df-37fb25413a91',
-    customer_uuid='3c8b3a46-881e-4cdd-93a6-f7f238bf020a',
+req = shared.RetryAuthenticationRequest(
+    authentication_uuid='32ca23f2-1d21-434e-a8c9-89320993ec98',
+    customer_uuid='f5d6d1dc-4ce6-4232-8707-1b4af2d537d4',
 )
 
-res = s.otp.retry(req)
+res = s.otp.post_retry(req)
 
 if res.retry_authentication_response is not None:
     # handle response
@@ -122,12 +122,12 @@ if res.retry_authentication_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [components.RetryAuthenticationRequest](../../models/shared/retryauthenticationrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [shared.RetryAuthenticationRequest](../../models/shared/retryauthenticationrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
 
-**[operations.RetryResponse](../../models/operations/retryresponse.md)**
+**[operations.PostRetryResponse](../../models/operations/postretryresponse.md)**
 

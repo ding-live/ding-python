@@ -7,31 +7,28 @@ from .utils.retries import RetryConfig
 from .utils import utils
 
 
-SERVER_PRODUCTION = 'production'
-r"""The production Ding API server"""
-SERVERS = {
-	SERVER_PRODUCTION: 'https://api.ding.live/v1',
-}
+SERVERS = [
+    'https://api.ding.live/v1',
+]
 """Contains the list of servers available to the SDK"""
-
 
 @dataclass
 class SDKConfiguration:
     client: requests.Session
     security_client: requests.Session
     server_url: str = ''
-    server: str = ''
+    server_idx: int = 0
     language: str = 'python'
     openapi_doc_version: str = '1.0.0'
-    sdk_version: str = '0.1.0'
+    sdk_version: str = '0.1.1'
     gen_version: str = '2.181.1'
-    user_agent: str = 'speakeasy-sdk/python 0.1.0 2.181.1 1.0.0 ding'
+    user_agent: str = 'speakeasy-sdk/python 0.1.1 2.181.1 1.0.0 Ding'
     retry_config: RetryConfig = None
 
     def get_server_details(self) -> Tuple[str, Dict[str, str]]:
         if self.server_url:
             return utils.remove_suffix(self.server_url, '/'), {}
-        if not self.server:
-            self.server = SERVER_PRODUCTION
+        if self.server_idx is None:
+            self.server_idx = 0
 
-        return SERVERS[self.server], {}
+        return SERVERS[self.server_idx], {}

@@ -3,17 +3,17 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ...models.components import createauthenticationresponse as components_createauthenticationresponse
+from ...models.shared import createauthenticationresponse as shared_createauthenticationresponse
 from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateAutenticationResponse:
+class PostAuthenticationResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_authentication_response: Optional[components_createauthenticationresponse.CreateAuthenticationResponse] = dataclasses.field(default=None)
+    create_authentication_response: Optional[shared_createauthenticationresponse.CreateAuthenticationResponse] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

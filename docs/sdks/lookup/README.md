@@ -7,24 +7,24 @@ Retrieve up-to-date metadata about a specific phone number
 
 ### Available Operations
 
-* [lookup](#lookup) - Lookup a phone number
+* [post_lookup](#post_lookup) - Lookup a phone number
 
-## lookup
+## post_lookup
 
 Lookup a phone number
 
 ### Example Usage
 
 ```python
-import test
-from test.models import components, operations
+import ding
+from ding.models import operations, shared
 
-s = test.Test(
-    api_key="YOUR_API_KEY",
+s = ding.Ding(
+    api_key="",
 )
 
 
-res = s.lookup.lookup(customer_uuid='6e93aa15-9177-4d09-8395-b69ce50db1c8', lookup_request=components.LookupRequest(
+res = s.lookup.post_lookup(customer_uuid='0959c29c-3ae6-483a-89ec-d21e646d9da9', lookup_request=shared.LookupRequest(
     phone_number='+1234567890',
 ))
 
@@ -35,13 +35,13 @@ if res.lookup_response is not None:
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `customer_uuid`                                                            | *str*                                                                      | :heavy_check_mark:                                                         | N/A                                                                        |
-| `lookup_request`                                                           | [Optional[components.LookupRequest]](../../models/shared/lookuprequest.md) | :heavy_minus_sign:                                                         | N/A                                                                        |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `customer_uuid`                                                        | *str*                                                                  | :heavy_check_mark:                                                     | N/A                                                                    |
+| `lookup_request`                                                       | [Optional[shared.LookupRequest]](../../models/shared/lookuprequest.md) | :heavy_minus_sign:                                                     | N/A                                                                    |
 
 
 ### Response
 
-**[operations.LookupResponse](../../models/operations/lookupresponse.md)**
+**[operations.PostLookupResponse](../../models/operations/postlookupresponse.md)**
 

@@ -5,8 +5,8 @@ import dataclasses
 import dateutil.parser
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
+from ding import utils
 from enum import Enum
-from test import utils
 from typing import Optional
 
 class RetryAuthenticationResponseStatus(str, Enum):

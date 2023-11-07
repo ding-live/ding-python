@@ -15,39 +15,35 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
-pip install ding
+pip install Ding
 ```
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-# Send a code
-This example shows how to send an OTP code to a user's phone number.
-
 ```python
-import test
-from test.models import components
+import ding
+from ding.models import shared
 
-s = test.Test(
-    api_key="YOUR_API_KEY",
+s = ding.Ding(
+    api_key="",
 )
 
-req = components.CreateAuthenticationRequest(
+req = shared.CreateAuthenticationRequest(
     app_realm='1234567890',
     app_version='1.0.0',
     callback_url='https://example.com/callback',
-    customer_uuid='eae192ab-9e1e-4b21-b5b1-bfcb79a32fcc',
+    customer_uuid='28591d9e-a825-47f6-ab11-1a61726305bf',
     device_id='1234567890',
     device_model='iPhone 15 Pro',
     os_version='13.2.1',
     phone_number='+1234567890',
 )
 
-res = s.otp.create_autentication(req)
+res = s.otp.post_authentication(req)
 
 if res.create_authentication_response is not None:
     # handle response
@@ -56,23 +52,21 @@ if res.create_authentication_response is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [.otp](docs/sdks/otp/README.md)
+### [.otp](docs/sdks/otp/README.md)
 
-* [check](docs/sdks/otp/README.md#check) - Check an authentication code
-* [create_autentication](docs/sdks/otp/README.md#create_autentication) - Create an authentication
-* [retry](docs/sdks/otp/README.md#retry) - Retry an authentication
+* [post_authentication](docs/sdks/otp/README.md#post_authentication) - Create an authentication
+* [post_check](docs/sdks/otp/README.md#post_check) - Check an authentication code
+* [post_retry](docs/sdks/otp/README.md#post_retry) - Retry an authentication
 
-## [.lookup](docs/sdks/lookup/README.md)
+### [.lookup](docs/sdks/lookup/README.md)
 
-* [lookup](docs/sdks/lookup/README.md#lookup) - Lookup a phone number
+* [post_lookup](docs/sdks/lookup/README.md#post_lookup) - Lookup a phone number
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -85,28 +79,33 @@ Handling errors in your SDK should largely match your expectations.  All operati
 ## Example
 
 ```python
-import test
-from test.models import components
+import ding
+from ding.models import shared
 
-s = test.Test(
-    api_key="YOUR_API_KEY",
+s = ding.Ding(
+    api_key="",
 )
 
-req = components.CreateCheckRequest(
-    authentication_uuid='e0e7b0e9-739d-424b-922f-1c2cb48ab077',
-    check_code='123456',
-    customer_uuid='8f1196d5-806e-4b71-9b24-5f96ec052808',
+req = shared.CreateAuthenticationRequest(
+    app_realm='1234567890',
+    app_version='1.0.0',
+    callback_url='https://example.com/callback',
+    customer_uuid='28591d9e-a825-47f6-ab11-1a61726305bf',
+    device_id='1234567890',
+    device_model='iPhone 15 Pro',
+    os_version='13.2.1',
+    phone_number='+1234567890',
 )
 
 res = None
 try:
-    res = s.otp.check(req)
+    res = s.otp.post_authentication(req)
 
 except (ErrorResponse) as e:
     print(e) # handle exception
 
 
-if res.create_check_response is not None:
+if res.create_authentication_response is not None:
     # handle response
     pass
 ```
@@ -115,34 +114,39 @@ if res.create_check_response is not None:
 <!-- Start Server Selection -->
 # Server Selection
 
-## Select Server by Name
+## Select Server by Index
 
-You can override the default server globally by passing a server name to the `server: str` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the names associated with the available servers:
+You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| Name | Server | Variables |
-| ----- | ------ | --------- |
-| `production` | `https://api.ding.live/v1` | None |
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://api.ding.live/v1` | None |
 
 For example:
 
 ```python
-import test
-from test.models import components
+import ding
+from ding.models import shared
 
-s = test.Test(
-    server="production",
-    api_key="YOUR_API_KEY",
+s = ding.Ding(
+    server_idx=0,
+    api_key="",
 )
 
-req = components.CreateCheckRequest(
-    authentication_uuid='e0e7b0e9-739d-424b-922f-1c2cb48ab077',
-    check_code='123456',
-    customer_uuid='8f1196d5-806e-4b71-9b24-5f96ec052808',
+req = shared.CreateAuthenticationRequest(
+    app_realm='1234567890',
+    app_version='1.0.0',
+    callback_url='https://example.com/callback',
+    customer_uuid='28591d9e-a825-47f6-ab11-1a61726305bf',
+    device_id='1234567890',
+    device_model='iPhone 15 Pro',
+    os_version='13.2.1',
+    phone_number='+1234567890',
 )
 
-res = s.otp.check(req)
+res = s.otp.post_authentication(req)
 
-if res.create_check_response is not None:
+if res.create_authentication_response is not None:
     # handle response
     pass
 ```
@@ -153,23 +157,28 @@ if res.create_check_response is not None:
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
 ```python
-import test
-from test.models import components
+import ding
+from ding.models import shared
 
-s = test.Test(
+s = ding.Ding(
     server_url="https://api.ding.live/v1",
-    api_key="YOUR_API_KEY",
+    api_key="",
 )
 
-req = components.CreateCheckRequest(
-    authentication_uuid='e0e7b0e9-739d-424b-922f-1c2cb48ab077',
-    check_code='123456',
-    customer_uuid='8f1196d5-806e-4b71-9b24-5f96ec052808',
+req = shared.CreateAuthenticationRequest(
+    app_realm='1234567890',
+    app_version='1.0.0',
+    callback_url='https://example.com/callback',
+    customer_uuid='28591d9e-a825-47f6-ab11-1a61726305bf',
+    device_id='1234567890',
+    device_model='iPhone 15 Pro',
+    os_version='13.2.1',
+    phone_number='+1234567890',
 )
 
-res = s.otp.check(req)
+res = s.otp.post_authentication(req)
 
-if res.create_check_response is not None:
+if res.create_authentication_response is not None:
     # handle response
     pass
 ```
@@ -184,19 +193,16 @@ The Python SDK makes API calls using the (requests)[https://pypi.org/project/req
 For example, you could specify a header for every request that your sdk makes as follows:
 
 ```python
-import test
+import ding
 import requests
 
 http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
-s = test.Test(client: http_client)
+s = ding.Ding(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
@@ -210,22 +216,27 @@ Your SDK supports the following security scheme globally:
 To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
 
 ```python
-import test
-from test.models import components
+import ding
+from ding.models import shared
 
-s = test.Test(
-    api_key="YOUR_API_KEY",
+s = ding.Ding(
+    api_key="",
 )
 
-req = components.CreateCheckRequest(
-    authentication_uuid='e0e7b0e9-739d-424b-922f-1c2cb48ab077',
-    check_code='123456',
-    customer_uuid='8f1196d5-806e-4b71-9b24-5f96ec052808',
+req = shared.CreateAuthenticationRequest(
+    app_realm='1234567890',
+    app_version='1.0.0',
+    callback_url='https://example.com/callback',
+    customer_uuid='28591d9e-a825-47f6-ab11-1a61726305bf',
+    device_id='1234567890',
+    device_model='iPhone 15 Pro',
+    os_version='13.2.1',
+    phone_number='+1234567890',
 )
 
-res = s.otp.check(req)
+res = s.otp.post_authentication(req)
 
-if res.create_check_response is not None:
+if res.create_authentication_response is not None:
     # handle response
     pass
 ```

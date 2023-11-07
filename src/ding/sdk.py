@@ -4,11 +4,11 @@ import requests as requests_http
 from .lookup import Lookup
 from .otp import Otp
 from .sdkconfiguration import SDKConfiguration
-from test import utils
-from test.models import components
+from ding import utils
+from ding.models import shared
 from typing import Dict
 
-class Test:
+class Ding:
     r"""Ding: The OTP API allows you to send authentication codes to your users using their phone numbers"""
     otp: Otp
     r"""Send OTP codes to your users using their phone numbers."""
@@ -19,7 +19,7 @@ class Test:
 
     def __init__(self,
                  api_key: str,
-                 server: str = None,
+                 server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
                  client: requests_http.Session = None,
@@ -29,8 +29,8 @@ class Test:
         
         :param api_key: The api_key required for authentication
         :type api_key: str
-        :param server: The server by name to use for all operations
-        :type server: str
+        :param server_idx: The index of the server to use for all operations
+        :type server_idx: int
         :param server_url: The server URL to use for all operations
         :type server_url: str
         :param url_params: Parameters to optionally template the server URL with
@@ -44,14 +44,14 @@ class Test:
             client = requests_http.Session()
         
         
-        security_client = utils.configure_security_client(client, components.Security(api_key = api_key))
+        security_client = utils.configure_security_client(client, shared.Security(api_key = api_key))
         
         
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, retry_config=retry_config)
        
         self._init_sdks()
     

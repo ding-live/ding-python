@@ -3,17 +3,17 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ...models.components import createcheckresponse as components_createcheckresponse
+from ...models.shared import createcheckresponse as shared_createcheckresponse
 from typing import Optional
 
 
 @dataclasses.dataclass
-class CheckResponse:
+class PostCheckResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_check_response: Optional[components_createcheckresponse.CreateCheckResponse] = dataclasses.field(default=None)
+    create_check_response: Optional[shared_createcheckresponse.CreateCheckResponse] = dataclasses.field(default=None)
     r"""OK"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

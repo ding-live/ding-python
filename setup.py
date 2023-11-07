@@ -9,10 +9,10 @@ except FileNotFoundError:
     long_description = ""
 
 setuptools.setup(
-    name="ding",
-    version="0.1.0",
+    name="Ding",
+    version="0.1.1",
     author="Ding",
-    description="Python Client SDK ",
+    description="Python Client SDK",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(where="src"),
