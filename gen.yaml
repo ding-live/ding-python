@@ -1,18 +1,37 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 07af31f9d9d662336d1edcd0a4170c9d
+  docVersion: 1.0.0
+  speakeasyVersion: 1.114.2
+  generationVersion: 2.181.1
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
-  baseServerURL: ""
-  flattenGlobalSecurity: true
+  comments: {}
   sdkClassName: test
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
+  repoURL: https://github.com/ding-live/ding-python.git
+features:
+  python:
+    core: 4.1.0
+    examples: 2.81.3
+    flattening: 2.81.1
+    globalSecurity: 2.82.0
+    globalServerURLs: 2.82.0
+    serverIDs: 2.81.1
 python:
-  version: 0.0.1
+  version: 0.1.0
   author: Ding
   clientServerStatusCodesAsErrors: true
   description: 'Python Client SDK '
   flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: models/callbacks
+      errors: models/errors
+      operations: models/operations
+      shared: models/components
+      webhooks: models/webhooks
+  installationURL: https://github.com/ding-live/ding-python.git
   maxMethodParams: 4
   packageName: ding
+  published: true
+  repoSubDirectory: .
