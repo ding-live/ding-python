@@ -27,4 +27,4 @@ python:
   description: Python Client SDK
   flattenGlobalSecurity: true
   maxMethodParams: 4
-  packageName: Ding
+  packageName: ding_sdk
