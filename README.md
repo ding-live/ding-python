@@ -12,7 +12,7 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 ## SDK Installation
 
 ```bash
-pip install ding_api_sdk
+pip install ding
 ```
 <!-- End SDK Installation -->
 

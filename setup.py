@@ -9,8 +9,8 @@ except FileNotFoundError:
     long_description = ""
 
 setuptools.setup(
-    name="ding_api_sdk",
-    version="0.3.0",
+    name="ding",
+    version="0.4.0",
     author="Ding",
     description="Python Client SDK",
     long_description=long_description,
