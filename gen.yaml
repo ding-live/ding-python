@@ -1,0 +1,18 @@
+configVersion: 1.0.0
+generation:
+  comments:
+    disableComments: false
+    omitDescriptionIfSummaryPresent: false
+  baseServerURL: ""
+  flattenGlobalSecurity: true
+  sdkClassName: Ding
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
+python:
+  version: 0.0.1
+  author: Ding
+  clientServerStatusCodesAsErrors: true
+  description: Ding's Python SDK
+  flattenGlobalSecurity: true
+  maxMethodParams: 4
+  packageName: ding_client_sdk
