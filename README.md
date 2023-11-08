@@ -121,39 +121,6 @@ Handling errors in this SDK should largely match your expectations. All operatio
 | errors.ErrorResponse | 400         | application/json |
 | errors.SDKError      | 400-600     | _/_              |
 
-## Check a code
-
-Check that a code entered by a user is valid.
-
-```python
-import ding
-from ding.models import components
-
-s = ding.Ding(
-    api_key="YOUR_API_KEY",
-)
-
-req = components.CreateCheckRequest(
-    authentication_uuid='e0e7b0e9-739d-424b-922f-1c2cb48ab077',
-    check_code='123456',
-    customer_uuid='8f1196d5-806e-4b71-9b24-5f96ec052808',
-)
-
-res = None
-try:
-    res = s.otp.check(req)
-except (errors.ErrorResponse) as e:
-    print(e) # handle exception
-
-except (errors.SDKError) as e:
-    print(e) # handle exception
-
-
-if res.create_check_response is not None:
-    # handle response
-    pass
-```
-
 <!-- End Error Handling -->
 
 <!-- Start Custom HTTP Client -->
