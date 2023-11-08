@@ -7,6 +7,7 @@ management:
 generation:
   comments: {}
   sdkClassName: Ding
+  baseServerUrl: "https://api.ding.live/v1"
   repoURL: https://github.com/ding-live/ding-python.git
 features:
   python:
