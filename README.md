@@ -25,13 +25,7 @@ s = ding.Ding(
 )
 
 req = components.CreateAuthenticationRequest(
-    app_realm='1234567890',
-    app_version='1.0.0',
-    callback_url='https://example.com/callback',
     customer_uuid='eae192ab-9e1e-4b21-b5b1-bfcb79a32fcc',
-    device_id='1234567890',
-    device_model='iPhone 15 Pro',
-    os_version='13.2.1',
     phone_number='+1234567890',
 )
 
@@ -96,13 +90,13 @@ if res.retry_authentication_response is not None:
 ## Available Resources and Operations
 
 
-### [.otp](docs/sdks/otp/README.md)
+### [otp](docs/sdks/otp/README.md)
 
 * [check](docs/sdks/otp/README.md#check) - Check an authentication code
 * [create_autentication](docs/sdks/otp/README.md#create_autentication) - Create an authentication
 * [retry](docs/sdks/otp/README.md#retry) - Retry an authentication
 
-### [.lookup](docs/sdks/lookup/README.md)
+### [lookup](docs/sdks/lookup/README.md)
 
 * [lookup](docs/sdks/lookup/README.md#lookup) - Lookup a phone number
 <!-- End SDK Available Operations -->
@@ -114,7 +108,7 @@ if res.retry_authentication_response is not None:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
 | Error Object         | Status Code          | Content Type         |
 | -------------------- | -------------------- | -------------------- |
@@ -228,7 +222,7 @@ if res.create_check_response is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import ding
@@ -245,7 +239,7 @@ s = ding.Ding(client: http_client)
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name      | Type      | Scheme    |
 | --------- | --------- | --------- |

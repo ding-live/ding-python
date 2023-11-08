@@ -12,13 +12,7 @@ s = ding.Ding(
 )
 
 req = components.CreateAuthenticationRequest(
-    app_realm='1234567890',
-    app_version='1.0.0',
-    callback_url='https://example.com/callback',
     customer_uuid='eae192ab-9e1e-4b21-b5b1-bfcb79a32fcc',
-    device_id='1234567890',
-    device_model='iPhone 15 Pro',
-    os_version='13.2.1',
     phone_number='+1234567890',
 )
 

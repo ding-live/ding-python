@@ -2,9 +2,10 @@
 
 import requests
 from dataclasses import dataclass
-from typing import Dict, Tuple
+from typing import Dict, Tuple, Callable, Union
 from .utils.retries import RetryConfig
 from .utils import utils
+from ding.models import components
 
 
 SERVER_PRODUCTION = 'production'
@@ -18,14 +19,14 @@ SERVERS = {
 @dataclass
 class SDKConfiguration:
     client: requests.Session
-    security_client: requests.Session
+    security: Union[components.Security,Callable[[], components.Security]] = None
     server_url: str = ''
     server: str = ''
     language: str = 'python'
     openapi_doc_version: str = '1.0.0'
-    sdk_version: str = '1.1.2'
-    gen_version: str = '2.183.0'
-    user_agent: str = 'speakeasy-sdk/python 1.1.2 2.183.0 1.0.0 ding_client_sdk'
+    sdk_version: str = '1.2.0'
+    gen_version: str = '2.185.0'
+    user_agent: str = 'speakeasy-sdk/python 1.2.0 2.185.0 1.0.0 ding_client_sdk'
     retry_config: RetryConfig = None
 
     def get_server_details(self) -> Tuple[str, Dict[str, str]]:

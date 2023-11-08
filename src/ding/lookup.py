@@ -13,6 +13,7 @@ class Lookup:
         self.sdk_configuration = sdk_config
         
     
+    
     def lookup(self, customer_uuid: str, lookup_request: Optional[components.LookupRequest] = None) -> operations.LookupResponse:
         r"""Lookup a phone number"""
         request = operations.LookupRequest(
@@ -30,7 +31,10 @@ class Lookup:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

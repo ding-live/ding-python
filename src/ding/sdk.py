@@ -6,7 +6,7 @@ from .otp import Otp
 from .sdkconfiguration import SDKConfiguration
 from ding import utils
 from ding.models import components
-from typing import Dict
+from typing import Callable, Dict, Union
 
 class Ding:
     r"""Ding: The OTP API allows you to send authentication codes to your users using their phone numbers"""
@@ -18,7 +18,7 @@ class Ding:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key: str,
+                 api_key: Union[str,Callable[[], str]],
                  server: str = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
@@ -28,7 +28,7 @@ class Ding:
         """Instantiates the SDK configuring it with the provided parameters.
         
         :param api_key: The api_key required for authentication
-        :type api_key: str
+        :type api_key: Union[str,Callable[[], str]]
         :param server: The server by name to use for all operations
         :type server: str
         :param server_url: The server URL to use for all operations
@@ -43,15 +43,13 @@ class Ding:
         if client is None:
             client = requests_http.Session()
         
-        
-        security_client = utils.configure_security_client(client, components.Security(api_key = api_key))
-        
+        security = components.Security(api_key = api_key)
         
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, security, server_url, server, retry_config=retry_config)
        
         self._init_sdks()
     

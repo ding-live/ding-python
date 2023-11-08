@@ -13,6 +13,7 @@ class Otp:
         self.sdk_configuration = sdk_config
         
     
+    
     def check(self, request: components.CreateCheckRequest) -> operations.CheckResponse:
         r"""Check an authentication code"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -25,7 +26,10 @@ class Otp:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -51,6 +55,7 @@ class Otp:
         return res
 
     
+    
     def create_autentication(self, request: components.CreateAuthenticationRequest) -> operations.CreateAutenticationResponse:
         r"""Create an authentication"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -63,7 +68,10 @@ class Otp:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -89,6 +97,7 @@ class Otp:
         return res
 
     
+    
     def retry(self, request: components.RetryAuthenticationRequest) -> operations.RetryResponse:
         r"""Retry an authentication"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -101,7 +110,10 @@ class Otp:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

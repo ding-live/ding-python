@@ -1,23 +1,23 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 3b237411fe15e007fd4deb5cc4496970
+  docChecksum: b8a9cbd146aa1183c110d3a9672c46b4
   docVersion: 1.0.0
-  speakeasyVersion: 1.115.0
-  generationVersion: 2.183.0
+  speakeasyVersion: 1.116.0
+  generationVersion: 2.185.0
 generation:
   comments: {}
   sdkClassName: Ding
   repoURL: https://github.com/ding-live/ding-python.git
 features:
   python:
-    core: 4.1.0
+    core: 4.1.2
     examples: 2.81.3
     flattening: 2.81.1
-    globalSecurity: 2.82.0
+    globalSecurity: 2.83.0
     globalServerURLs: 2.82.0
     serverIDs: 2.81.1
 python:
-  version: 1.1.2
+  version: 1.2.0
   author: Ding
   clientServerStatusCodesAsErrors: true
   description: Ding's Python SDK
@@ -30,8 +30,10 @@ python:
       operations: models/operations
       shared: models/components
       webhooks: models/webhooks
+  inputModelSuffix: input
   installationURL: https://github.com/ding-live/ding-python.git
   maxMethodParams: 4
+  outputModelSuffix: output
   packageName: ding_client_sdk
   published: true
   repoSubDirectory: .
