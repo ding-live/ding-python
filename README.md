@@ -3,21 +3,17 @@
 The Ding Python library provides convenient access to the Ding API from applications written in the Python language.
 
 <!-- Start SDK Installation -->
-
 ## SDK Installation
 
 ```bash
 pip install ding_client_sdk
 ```
-
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
 
 <!-- Start SDK Example Usage -->
-
 ## Send a code
-
 This example shows how to send an OTP code to a user's phone number.
 
 ```python
@@ -45,22 +41,21 @@ if res.create_authentication_response is not None:
     # handle response
     pass
 ```
-
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-
 ## Available Resources and Operations
+
 
 ### [.otp](docs/sdks/otp/README.md)
 
-- [check](docs/sdks/otp/README.md#check) - Check an authentication code
-- [create_autentication](docs/sdks/otp/README.md#create_autentication) - Create an authentication
-- [retry](docs/sdks/otp/README.md#retry) - Retry an authentication
+* [check](docs/sdks/otp/README.md#check) - Check an authentication code
+* [create_autentication](docs/sdks/otp/README.md#create_autentication) - Create an authentication
+* [retry](docs/sdks/otp/README.md#retry) - Retry an authentication
 
 ### [.lookup](docs/sdks/lookup/README.md)
 
-- [lookup](docs/sdks/lookup/README.md#lookup) - Lookup a phone number
+* [lookup](docs/sdks/lookup/README.md#lookup) - Lookup a phone number
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
@@ -68,15 +63,15 @@ if res.create_authentication_response is not None:
 <!-- End Dev Containers -->
 
 <!-- Start Error Handling -->
-
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations. All operations return a response object or raise an error. If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
-| Error Object         | Status Code | Content Type     |
-| -------------------- | ----------- | ---------------- |
-| errors.ErrorResponse | 400         | application/json |
-| errors.SDKError      | 400-600     | _/_              |
+| Error Object         | Status Code          | Content Type         |
+| -------------------- | -------------------- | -------------------- |
+| errors.ErrorResponse | 400                  | application/json     |
+| errors.SDKError      | 400-600              | */*                  |
+
 
 ## Example
 
@@ -108,20 +103,18 @@ if res.create_check_response is not None:
     # handle response
     pass
 ```
-
 <!-- End Error Handling -->
 
 <!-- Start Server Selection -->
-
 # Server Selection
 
 ## Select Server by Name
 
 You can override the default server globally by passing a server name to the `server: str` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the names associated with the available servers:
 
-| Name         | Server                     | Variables |
-| ------------ | -------------------------- | --------- |
-| `production` | `https://api.ding.live/v1` | None      |
+| Name | Server | Variables |
+| ----- | ------ | --------- |
+| `production` | `https://api.ding.live/v1` | None |
 
 For example:
 
@@ -146,6 +139,7 @@ if res.create_check_response is not None:
     # handle response
     pass
 ```
+
 
 ## Override Server URL Per-Client
 
@@ -172,14 +166,13 @@ if res.create_check_response is not None:
     # handle response
     pass
 ```
-
 <!-- End Server Selection -->
 
 <!-- Start Custom HTTP Client -->
-
 # Custom HTTP Client
 
-The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library. In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
+The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
+
 
 For example, you could specify a header for every request that your sdk makes as follows:
 
@@ -191,20 +184,18 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = ding.Ding(client: http_client)
 ```
-
 <!-- End Custom HTTP Client -->
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
 Your SDK supports the following security scheme globally:
 
-| Name      | Type   | Scheme  |
-| --------- | ------ | ------- |
-| `api_key` | apiKey | API key |
+| Name      | Type      | Scheme    |
+| --------- | --------- | --------- |
+| `api_key` | apiKey    | API key   |
 
 To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
 
@@ -228,7 +219,6 @@ if res.create_check_response is not None:
     # handle response
     pass
 ```
-
 <!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

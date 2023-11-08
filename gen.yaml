@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 0ed6e1c1aa58674e00e4e211e67455a1
+  docChecksum: 07af31f9d9d662336d1edcd0a4170c9d
   docVersion: 1.0.0
   speakeasyVersion: 1.115.0
   generationVersion: 2.183.0
@@ -17,7 +17,7 @@ features:
     globalServerURLs: 2.82.0
     serverIDs: 2.81.1
 python:
-  version: 1.1.0
+  version: 1.1.1
   author: Ding
   clientServerStatusCodesAsErrors: true
   description: Ding's Python SDK
