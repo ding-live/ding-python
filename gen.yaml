@@ -17,7 +17,7 @@ features:
     globalServerURLs: 2.82.0
     serverIDs: 2.81.1
 python:
-  version: 1.0.0
+  version: 1.1.0
   author: Ding
   clientServerStatusCodesAsErrors: true
   description: Ding's Python SDK

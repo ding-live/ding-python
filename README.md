@@ -15,7 +15,7 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 pip install ding_client_sdk
@@ -24,8 +24,7 @@ pip install ding_client_sdk
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-# Send a code
+## Send a code
 This example shows how to send an OTP code to a user's phone number.
 
 ```python
@@ -56,23 +55,21 @@ if res.create_authentication_response is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [.otp](docs/sdks/otp/README.md)
+### [.otp](docs/sdks/otp/README.md)
 
 * [check](docs/sdks/otp/README.md#check) - Check an authentication code
 * [create_autentication](docs/sdks/otp/README.md#create_autentication) - Create an authentication
 * [retry](docs/sdks/otp/README.md#retry) - Retry an authentication
 
-## [.lookup](docs/sdks/lookup/README.md)
+### [.lookup](docs/sdks/lookup/README.md)
 
 * [lookup](docs/sdks/lookup/README.md#lookup) - Lookup a phone number
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -198,12 +195,9 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = ding.Ding(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
