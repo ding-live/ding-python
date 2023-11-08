@@ -14,7 +14,7 @@ pip install ding_client_sdk
 
 <!-- Start SDK Example Usage -->
 ## Send a code
-This example shows how to send an OTP code to a user's phone number.
+Send an OTP code to a user's phone number.
 
 ```python
 import ding
@@ -38,6 +38,55 @@ req = components.CreateAuthenticationRequest(
 res = s.otp.create_autentication(req)
 
 if res.create_authentication_response is not None:
+    # handle response
+    pass
+```
+
+
+## Check a code
+Check that a code entered by a user is valid.
+
+```python
+import ding
+from ding.models import components
+
+s = ding.Ding(
+    api_key="YOUR_API_KEY",
+)
+
+req = components.CreateCheckRequest(
+    authentication_uuid='e0e7b0e9-739d-424b-922f-1c2cb48ab077',
+    check_code='123456',
+    customer_uuid='8f1196d5-806e-4b71-9b24-5f96ec052808',
+)
+
+res = s.otp.check(req)
+
+if res.create_check_response is not None:
+    # handle response
+    pass
+```
+
+
+## Retry an authentication
+Retry an authentication if a user has not received the code.
+
+```python
+import ding
+from ding.models import components
+
+s = ding.Ding(
+    api_key="YOUR_API_KEY",
+)
+
+req = components.RetryAuthenticationRequest(
+    authentication_uuid='a74ee547-564d-487a-91df-37fb25413a91',
+    customer_uuid='3c8b3a46-881e-4cdd-93a6-f7f238bf020a',
+)
+
+res = s.otp.retry(req)
+
+if res.retry_authentication_response is not None:
     # handle response
     pass
 ```
@@ -73,7 +122,8 @@ Handling errors in your SDK should largely match your expectations.  All operati
 | errors.SDKError      | 400-600              | */*                  |
 
 
-## Example
+## Check a code
+Check that a code entered by a user is valid.
 
 ```python
 import ding
@@ -117,6 +167,8 @@ You can override the default server globally by passing a server name to the `se
 | `production` | `https://api.ding.live/v1` | None |
 
 For example:
+## Check a code
+Check that a code entered by a user is valid.
 
 ```python
 import ding
@@ -144,6 +196,8 @@ if res.create_check_response is not None:
 ## Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+## Check a code
+Check that a code entered by a user is valid.
 
 ```python
 import ding
@@ -198,6 +252,8 @@ Your SDK supports the following security scheme globally:
 | `api_key` | apiKey    | API key   |
 
 To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
+## Check a code
+Check that a code entered by a user is valid.
 
 ```python
 import ding
