@@ -15,7 +15,7 @@ class Otp:
     
     
     def check(self, request: components.CreateCheckRequest) -> operations.CheckResponse:
-        r"""Check an authentication code"""
+        r"""Check a code"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/check'
@@ -57,7 +57,7 @@ class Otp:
     
     
     def create_autentication(self, request: components.CreateAuthenticationRequest) -> operations.CreateAutenticationResponse:
-        r"""Create an authentication"""
+        r"""Send a code"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/authentication'
@@ -99,7 +99,7 @@ class Otp:
     
     
     def retry(self, request: components.RetryAuthenticationRequest) -> operations.RetryResponse:
-        r"""Retry an authentication"""
+        r"""Perform a retry"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/retry'

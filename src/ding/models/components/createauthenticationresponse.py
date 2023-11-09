@@ -10,7 +10,11 @@ from enum import Enum
 from typing import Optional
 
 class Status(str, Enum):
-    r"""The status of the authentication."""
+    r"""The status of the authentication. Possible values are:
+      * `pending` - The OTP code is being sent.
+      * `rate_limited` - This user is rate-limited and cannot receive another code.
+      * `spam_detected` - This attempt is flagged as spam. Go to the dashboard for more details.
+    """
     PENDING = 'pending'
     RATE_LIMITED = 'rate_limited'
     SPAM_DETECTED = 'spam_detected'
@@ -26,6 +30,10 @@ class CreateAuthenticationResponse:
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     r"""The time at which the authentication expires and can no longer be checked or retried."""
     status: Optional[Status] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    r"""The status of the authentication."""
+    r"""The status of the authentication. Possible values are:
+      * `pending` - The OTP code is being sent.
+      * `rate_limited` - This user is rate-limited and cannot receive another code.
+      * `spam_detected` - This attempt is flagged as spam. Go to the dashboard for more details.
+    """
     
 

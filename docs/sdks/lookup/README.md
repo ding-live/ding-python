@@ -7,26 +7,24 @@ Retrieve up-to-date metadata about a specific phone number
 
 ### Available Operations
 
-* [lookup](#lookup) - Lookup a phone number
+* [lookup](#lookup) - Lookup a number
 
 ## lookup
 
-Lookup a phone number
+Lookup a number
 
 ### Example Usage
 
 ```python
 import ding
-from ding.models import components, operations
+from ding.models import operations
 
 s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 
 
-res = s.lookup.lookup(customer_uuid='6e93aa15-9177-4d09-8395-b69ce50db1c8', lookup_request=components.LookupRequest(
-    phone_number='+1234567890',
-))
+res = s.lookup.lookup(customer_uuid='6e93aa15-9177-4d09-8395-b69ce50db1c8', phone_number='string')
 
 if res.lookup_response is not None:
     # handle response
@@ -35,10 +33,10 @@ if res.lookup_response is not None:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `customer_uuid`                                                                | *str*                                                                          | :heavy_check_mark:                                                             | N/A                                                                            |
-| `lookup_request`                                                               | [Optional[components.LookupRequest]](../../models/components/lookuprequest.md) | :heavy_minus_sign:                                                             | N/A                                                                            |
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `customer_uuid`    | *str*              | :heavy_check_mark: | N/A                |
+| `phone_number`     | *str*              | :heavy_check_mark: | N/A                |
 
 
 ### Response

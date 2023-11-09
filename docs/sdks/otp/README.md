@@ -7,13 +7,13 @@ Send OTP codes to your users using their phone numbers.
 
 ### Available Operations
 
-* [check](#check) - Check an authentication code
-* [create_autentication](#create_autentication) - Create an authentication
-* [retry](#retry) - Retry an authentication
+* [check](#check) - Check a code
+* [create_autentication](#create_autentication) - Send a code
+* [retry](#retry) - Perform a retry
 
 ## check
 
-Check an authentication code
+Check a code
 
 ### Example Usage
 
@@ -57,7 +57,7 @@ if res.create_check_response is not None:
 
 ## create_autentication
 
-Create an authentication
+Send a code
 
 ### Example Usage
 
@@ -100,7 +100,7 @@ if res.create_authentication_response is not None:
 
 ## retry
 
-Retry an authentication
+Perform a retry
 
 ### Example Usage
 

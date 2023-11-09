@@ -3,7 +3,6 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ...models.components import lookuprequest as components_lookuprequest
 from ...models.components import lookupresponse as components_lookupresponse
 from typing import Optional
 
@@ -11,7 +10,7 @@ from typing import Optional
 @dataclasses.dataclass
 class LookupRequest:
     customer_uuid: str = dataclasses.field(metadata={'header': { 'field_name': 'customer-uuid', 'style': 'simple', 'explode': False }})
-    lookup_request: Optional[components_lookuprequest.LookupRequest] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    phone_number: str = dataclasses.field(metadata={'path_param': { 'field_name': 'phone_number', 'style': 'simple', 'explode': False }})
     
 
 

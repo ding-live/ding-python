@@ -14,20 +14,17 @@ class Lookup:
         
     
     
-    def lookup(self, customer_uuid: str, lookup_request: Optional[components.LookupRequest] = None) -> operations.LookupResponse:
-        r"""Lookup a phone number"""
+    def lookup(self, customer_uuid: str, phone_number: str) -> operations.LookupResponse:
+        r"""Lookup a number"""
         request = operations.LookupRequest(
             customer_uuid=customer_uuid,
-            lookup_request=lookup_request,
+            phone_number=phone_number,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = base_url + '/lookup'
+        url = utils.generate_url(operations.LookupRequest, base_url, '/lookup/{phone_number}', request)
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "lookup_request", False, True, 'json')
-        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -36,7 +33,7 @@ class Lookup:
         else:
             client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
-        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.LookupResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

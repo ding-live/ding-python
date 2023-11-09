@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="ding_client_sdk",
-    version="1.2.2",
+    version="1.2.3",
     author="Ding",
     description="Ding's Python SDK",
     long_description=long_description,

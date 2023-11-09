@@ -10,7 +10,14 @@ from enum import Enum
 from typing import Optional
 
 class RetryAuthenticationResponseStatus(str, Enum):
-    r"""The status of the authentication."""
+    r"""The status of the retry. Possible values are:
+      * `approved` - The retry was approved and a new code was sent.
+      * `denied` - The retry was denied.
+      * `no_attempt` - No attempt was sent yet so we cannot perform a retry.
+      * `rate_limited` - The authentication was rate limited and cannot be retried.
+      * `expired_auth` - The authentication has expired and cannot be retried.
+      * `already_validated` - The authentication has already been validated.
+    """
     APPROVED = 'approved'
     DENIED = 'denied'
     NO_ATTEMPT = 'no_attempt'
@@ -30,6 +37,13 @@ class RetryAuthenticationResponse:
     remaining_retry: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remaining_retry'), 'exclude': lambda f: f is None }})
     r"""The number of retries remaining."""
     status: Optional[RetryAuthenticationResponseStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    r"""The status of the authentication."""
+    r"""The status of the retry. Possible values are:
+      * `approved` - The retry was approved and a new code was sent.
+      * `denied` - The retry was denied.
+      * `no_attempt` - No attempt was sent yet so we cannot perform a retry.
+      * `rate_limited` - The authentication was rate limited and cannot be retried.
+      * `expired_auth` - The authentication has expired and cannot be retried.
+      * `already_validated` - The authentication has already been validated.
+    """
     
 
