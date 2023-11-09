@@ -27,11 +27,11 @@ s = ding.Ding(
 )
 
 req = components.CreateAuthenticationRequest(
-    customer_uuid='82779012-9667-4917-8532-b94017ce3f0f',
+    customer_uuid='eae192ab-9e1e-4b21-b5b1-bfcb79a32fcc',
     phone_number='+1234567890',
 )
 
-res = s.otp.send(req)
+res = s.otp.create_autentication(req)
 
 if res.create_authentication_response is not None:
     # handle response
@@ -97,8 +97,8 @@ if res.retry_authentication_response is not None:
 ### [otp](docs/sdks/otp/README.md)
 
 * [check](docs/sdks/otp/README.md#check) - Check an authentication code
+* [create_autentication](docs/sdks/otp/README.md#create_autentication) - Create an authentication
 * [retry](docs/sdks/otp/README.md#retry) - Retry an authentication
-* [send](docs/sdks/otp/README.md#send) - Create an authentication
 
 ### [lookup](docs/sdks/lookup/README.md)
 

@@ -13,11 +13,11 @@ s = ding.Ding(
 )
 
 req = components.CreateAuthenticationRequest(
-    customer_uuid='82779012-9667-4917-8532-b94017ce3f0f',
+    customer_uuid='eae192ab-9e1e-4b21-b5b1-bfcb79a32fcc',
     phone_number='+1234567890',
 )
 
-res = s.otp.send(req)
+res = s.otp.create_autentication(req)
 
 if res.create_authentication_response is not None:
     # handle response
