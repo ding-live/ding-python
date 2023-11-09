@@ -1,7 +1,8 @@
 <!-- Start SDK Example Usage -->
+### Send a code
 
-## Send a code
 Send an OTP code to a user's phone number.
+
 
 ```python
 import ding
@@ -12,20 +13,21 @@ s = ding.Ding(
 )
 
 req = components.CreateAuthenticationRequest(
-    customer_uuid='eae192ab-9e1e-4b21-b5b1-bfcb79a32fcc',
+    customer_uuid='82779012-9667-4917-8532-b94017ce3f0f',
     phone_number='+1234567890',
 )
 
-res = s.otp.create_autentication(req)
+res = s.otp.send(req)
 
 if res.create_authentication_response is not None:
     # handle response
     pass
 ```
 
+### Check a code
 
-## Check a code
 Check that a code entered by a user is valid.
+
 
 ```python
 import ding
@@ -48,9 +50,10 @@ if res.create_check_response is not None:
     pass
 ```
 
+### Retry an authentication
 
-## Retry an authentication
 Retry an authentication if a user has not received the code.
+
 
 ```python
 import ding
