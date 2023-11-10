@@ -8,6 +8,21 @@ from enum import Enum
 from typing import Optional
 
 class Code(str, Enum):
+    r"""A machine-readable code that describes the error. Possible values are:
+      * `invalid_phone_number` - This is not a valid E.164 number.
+      * `internal_server_error` - An internal server error occurred.
+      * `bad_request` - The request was malformed.
+      * `account_invalid` - The customer UUID you provided is invalid.
+      * `negative_balance` - You have a negative balance.
+      * `invalid_line` - Ding does not support this type of phone number.
+      * `unsupported_region` - Ding does not support this region yet.
+      * `invalid_auth_uuid` - The authentication UUID you provided is invalid.
+      * `blocked_number` - The phone number you provided is in the blocklist.
+      * `invalid_app_version` - The app version you provided is invalid.
+      * `invalid_os_version` - The OS version you provided is invalid.
+      * `invalid_device_model` - The device model you provided is invalid.
+      * `invalid_device_id` - The device ID you provided is invalid.
+    """
     INVALID_PHONE_NUMBER = 'invalid_phone_number'
     INTERNAL_SERVER_ERROR = 'internal_server_error'
     BAD_REQUEST = 'bad_request'
@@ -31,9 +46,25 @@ class Code(str, Enum):
 @dataclasses.dataclass
 class ErrorResponse(Exception):
     code: Optional[Code] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
+    r"""A machine-readable code that describes the error. Possible values are:
+      * `invalid_phone_number` - This is not a valid E.164 number.
+      * `internal_server_error` - An internal server error occurred.
+      * `bad_request` - The request was malformed.
+      * `account_invalid` - The customer UUID you provided is invalid.
+      * `negative_balance` - You have a negative balance.
+      * `invalid_line` - Ding does not support this type of phone number.
+      * `unsupported_region` - Ding does not support this region yet.
+      * `invalid_auth_uuid` - The authentication UUID you provided is invalid.
+      * `blocked_number` - The phone number you provided is in the blocklist.
+      * `invalid_app_version` - The app version you provided is invalid.
+      * `invalid_os_version` - The OS version you provided is invalid.
+      * `invalid_device_model` - The device model you provided is invalid.
+      * `invalid_device_id` - The device ID you provided is invalid.
+    """
     doc_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doc_url'), 'exclude': lambda f: f is None }})
     r"""A link to the documentation that describes the error."""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
+    r"""A human-readable message that describes the error."""
     
 
     def __str__(self) -> str:
