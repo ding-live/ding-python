@@ -13,7 +13,7 @@ class RetryAuthenticationResponseStatus(str, Enum):
     r"""The status of the retry. Possible values are:
       * `approved` - The retry was approved and a new code was sent.
       * `denied` - The retry was denied.
-      * `no_attempt` - No attempt was sent yet so we cannot perform a retry.
+      * `no_attempt` - No attempt was sent yet so a retry cannot be completed.
       * `rate_limited` - The authentication was rate limited and cannot be retried.
       * `expired_auth` - The authentication has expired and cannot be retried.
       * `already_validated` - The authentication has already been validated.
@@ -35,12 +35,12 @@ class RetryAuthenticationResponse:
     next_retry_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_retry_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     r"""The time at which the next retry will be available."""
     remaining_retry: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remaining_retry'), 'exclude': lambda f: f is None }})
-    r"""The number of retries remaining."""
+    r"""The number of remaining retries."""
     status: Optional[RetryAuthenticationResponseStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""The status of the retry. Possible values are:
       * `approved` - The retry was approved and a new code was sent.
       * `denied` - The retry was denied.
-      * `no_attempt` - No attempt was sent yet so we cannot perform a retry.
+      * `no_attempt` - No attempt was sent yet so a retry cannot be completed.
       * `rate_limited` - The authentication was rate limited and cannot be retried.
       * `expired_auth` - The authentication has expired and cannot be retried.
       * `already_validated` - The authentication has already been validated.

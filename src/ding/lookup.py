@@ -15,7 +15,7 @@ class Lookup:
     
     
     def lookup(self, customer_uuid: str, phone_number: str) -> operations.LookupResponse:
-        r"""Lookup a number"""
+        r"""Perform a phone number lookup"""
         request = operations.LookupRequest(
             customer_uuid=customer_uuid,
             phone_number=phone_number,

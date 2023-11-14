@@ -9,7 +9,7 @@ from ding.models import components
 from typing import Callable, Dict, Union
 
 class Ding:
-    r"""Ding: The OTP API allows you to send authentication codes to your users using their phone numbers"""
+    r"""Ding: The OTP API allows you to send authentication codes to your users using their phone numbers."""
     otp: Otp
     r"""Send OTP codes to your users using their phone numbers."""
     lookup: Lookup

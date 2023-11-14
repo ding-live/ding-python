@@ -24,11 +24,11 @@ class CreateAuthenticationRequest:
     app_realm: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('app_realm'), 'exclude': lambda f: f is None }})
     r"""The Android SMS Retriever API hash code that identifies your app. This allows you to automatically retrieve and fill the OTP code on Android devices."""
     app_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('app_version'), 'exclude': lambda f: f is None }})
-    r"""The version of your app."""
+    r"""The version of your application."""
     callback_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('callback_url'), 'exclude': lambda f: f is None }})
     r"""A webhook URL to which delivery statuses will be sent."""
     device_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('device_id'), 'exclude': lambda f: f is None }})
-    r"""Unique identifier for the user's device. For Android, this corresponds to the ANDROID_ID and for iOS, this corresponds to the identifierForVendor."""
+    r"""Unique identifier for the user's device. For Android, this corresponds to the `ANDROID_ID` and for iOS, this corresponds to the `identifierForVendor`."""
     device_model: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('device_model'), 'exclude': lambda f: f is None }})
     r"""The model of the user's device."""
     device_type: Optional[DeviceType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('device_type'), 'exclude': lambda f: f is None }})
@@ -38,6 +38,6 @@ class CreateAuthenticationRequest:
     is_returning_user: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_returning_user'), 'exclude': lambda f: f is None }})
     r"""Whether the user is a returning user on your app."""
     os_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('os_version'), 'exclude': lambda f: f is None }})
-    r"""The version of the user's operating system."""
+    r"""The version of the user's device operating system."""
     
 

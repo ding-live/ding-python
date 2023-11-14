@@ -102,7 +102,7 @@ if res.retry_authentication_response is not None:
 
 ### [lookup](docs/sdks/lookup/README.md)
 
-* [lookup](docs/sdks/lookup/README.md#lookup) - Lookup a number
+* [lookup](docs/sdks/lookup/README.md#lookup) - Perform a phone number lookup
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
