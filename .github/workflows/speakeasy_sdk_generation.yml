@@ -8,7 +8,7 @@ permissions:
   workflow_dispatch:
     inputs:
       force:
-        description: Force generation of SDKs
+        description: Force generation
         type: boolean
         default: false
   schedule:
