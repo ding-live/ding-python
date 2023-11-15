@@ -18,7 +18,7 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 ## SDK Installation
 
 ```bash
-pip install openapi
+pip install ding_api_client
 ```
 <!-- End SDK Installation -->
 
