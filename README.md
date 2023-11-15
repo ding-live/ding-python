@@ -155,7 +155,6 @@ if res.create_authentication_response is not None:
     # handle response
     pass
 ```
-
 <!-- End Error Handling -->
 
 <!-- Start Server Selection -->
@@ -234,7 +233,6 @@ s = sdk.SDK(client: http_client)
 <!-- End Custom HTTP Client -->
 
 <!-- Start Authentication -->
-
 ## Authentication
 
 ### Per-Client Security Schemes
