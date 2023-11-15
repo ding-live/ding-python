@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from ding import utils
 from enum import Enum
-from sdk import utils
 from typing import Optional
 
 class Code(str, Enum):

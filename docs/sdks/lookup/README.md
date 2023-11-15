@@ -16,10 +16,10 @@ Perform a phone number lookup
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import operations
+import ding
+from ding.models import operations
 
-s = sdk.SDK(
+s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 

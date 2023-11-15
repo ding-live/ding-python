@@ -4,11 +4,11 @@ import requests as requests_http
 from .lookup import Lookup
 from .otp import Otp
 from .sdkconfiguration import SDKConfiguration
-from sdk import utils
-from sdk.models import components
+from ding import utils
+from ding.models import components
 from typing import Callable, Dict, Union
 
-class SDK:
+class Ding:
     r"""Ding: The OTP API allows you to send authentication codes to your users using their phone numbers."""
     otp: Otp
     r"""Send OTP codes to your users using their phone numbers."""

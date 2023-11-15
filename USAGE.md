@@ -5,10 +5,10 @@ Send an OTP code to a user's phone number.
 
 
 ```python
-import sdk
-from sdk.models import components
+import ding
+from ding.models import components
 
-s = sdk.SDK(
+s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 
@@ -30,10 +30,10 @@ Check that a code entered by a user is valid.
 
 
 ```python
-import sdk
-from sdk.models import components
+import ding
+from ding.models import components
 
-s = sdk.SDK(
+s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 
@@ -56,10 +56,10 @@ Perform a retry if a user has not received the code.
 
 
 ```python
-import sdk
-from sdk.models import components
+import ding
+from ding.models import components
 
-s = sdk.SDK(
+s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 

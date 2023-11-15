@@ -18,10 +18,10 @@ Send a code
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import components
+import ding
+from ding.models import components
 
-s = sdk.SDK(
+s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 
@@ -61,10 +61,10 @@ Check a code
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import components
+import ding
+from ding.models import components
 
-s = sdk.SDK(
+s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 
@@ -105,10 +105,10 @@ Perform a retry
 ### Example Usage
 
 ```python
-import sdk
-from sdk.models import components
+import ding
+from ding.models import components
 
-s = sdk.SDK(
+s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 
