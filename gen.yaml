@@ -6,7 +6,7 @@ management:
   generationVersion: 2.189.1
 generation:
   comments: {}
-  sdkClassName: SDK
+  sdkClassName: Ding
   repoURL: https://github.com/ding-live/ding-python.git
   maintainOpenAPIOrder: true
   usageSnippets:
