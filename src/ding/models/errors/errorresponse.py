@@ -45,6 +45,7 @@ class Code(str, Enum):
 
 @dataclasses.dataclass
 class ErrorResponse(Exception):
+    r"""Bad Request"""
     code: Optional[Code] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""A machine-readable code that describes the error. Possible values are:
       * `invalid_phone_number` - This is not a valid E.164 number.

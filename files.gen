@@ -9,6 +9,7 @@ src/ding/utils/__init__.py
 src/ding/utils/retries.py
 src/ding/utils/utils.py
 src/ding/models/errors/sdkerror.py
+tests/helpers.py
 src/ding/models/operations/create_autentication.py
 src/ding/models/operations/check.py
 src/ding/models/operations/retry.py
