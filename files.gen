@@ -27,7 +27,6 @@ src/ding/models/__init__.py
 src/ding/models/errors/__init__.py
 src/ding/models/operations/__init__.py
 src/ding/models/components/__init__.py
-USAGE.md
 docs/models/operations/createautenticationresponse.md
 docs/models/operations/checkresponse.md
 docs/models/operations/retryresponse.md
@@ -51,4 +50,5 @@ docs/models/errors/errorresponse.md
 docs/sdks/ding/README.md
 docs/sdks/otp/README.md
 docs/sdks/lookup/README.md
+USAGE.md
 .gitattributes

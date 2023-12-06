@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 5e4ef027bc51f54368e8b1607b77c098
   docVersion: 1.0.0
-  speakeasyVersion: 1.121.3
-  generationVersion: 2.195.2
+  speakeasyVersion: 1.125.2
+  generationVersion: 2.210.6
 generation:
   comments: {}
   sdkClassName: Ding
@@ -13,14 +13,14 @@ generation:
     optionalPropertyRendering: withExample
 features:
   python:
-    core: 4.1.5
+    core: 4.1.6
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.83.0
     globalServerURLs: 2.82.1
     serverIDs: 2.81.1
 python:
-  version: 1.2.3
+  version: 1.2.4
   author: Ding
   clientServerStatusCodesAsErrors: true
   description: Python Client SDK
