@@ -14,13 +14,13 @@ class Otp:
         
     
     
-    def create_autentication(self, request: components.CreateAuthenticationRequest) -> operations.CreateAutenticationResponse:
+    def create_autentication(self, request: Optional[components.CreateAuthenticationRequest]) -> operations.CreateAutenticationResponse:
         r"""Send a code"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/authentication'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[components.CreateAuthenticationRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -56,13 +56,13 @@ class Otp:
 
     
     
-    def check(self, request: components.CreateCheckRequest) -> operations.CheckResponse:
+    def check(self, request: Optional[components.CreateCheckRequest]) -> operations.CheckResponse:
         r"""Check a code"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/check'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[components.CreateCheckRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -98,13 +98,13 @@ class Otp:
 
     
     
-    def retry(self, request: components.RetryAuthenticationRequest) -> operations.RetryResponse:
+    def retry(self, request: Optional[components.RetryAuthenticationRequest]) -> operations.RetryResponse:
         r"""Perform a retry"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/retry'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[components.RetryAuthenticationRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

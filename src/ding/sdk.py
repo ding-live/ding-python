@@ -6,7 +6,7 @@ from .otp import Otp
 from .sdkconfiguration import SDKConfiguration
 from ding import utils
 from ding.models import components
-from typing import Callable, Dict, Union
+from typing import Dict
 
 class Ding:
     r"""Ding: The OTP API allows you to send authentication codes to your users using their phone numbers."""
@@ -18,7 +18,7 @@ class Ding:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key: Union[str,Callable[[], str]],
+                 api_key: str ,
                  server: str = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
