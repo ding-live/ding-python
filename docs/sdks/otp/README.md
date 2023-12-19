@@ -52,7 +52,7 @@ if res.create_authentication_response is not None:
 | Error Object         | Status Code          | Content Type         |
 | -------------------- | -------------------- | -------------------- |
 | errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 400-600              | */*                  |
+| errors.SDKError      | 4x-5xx               | */*                  |
 
 ## check
 
@@ -96,7 +96,7 @@ if res.create_check_response is not None:
 | Error Object         | Status Code          | Content Type         |
 | -------------------- | -------------------- | -------------------- |
 | errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 400-600              | */*                  |
+| errors.SDKError      | 4x-5xx               | */*                  |
 
 ## retry
 
@@ -139,4 +139,4 @@ if res.retry_authentication_response is not None:
 | Error Object         | Status Code          | Content Type         |
 | -------------------- | -------------------- | -------------------- |
 | errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 400-600              | */*                  |
+| errors.SDKError      | 4x-5xx               | */*                  |
