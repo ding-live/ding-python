@@ -4,16 +4,16 @@ management:
   docChecksum: 5e4ef027bc51f54368e8b1607b77c098
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.237.2
-  releaseVersion: 1.3.4
-  configChecksum: 9c562b30adb594a0783d57caa8484500
+  generationVersion: 2.245.1
+  releaseVersion: 1.3.5
+  configChecksum: 9903734e35d5935dc026d7dc57fd175b
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
   published: true
 features:
   python:
-    core: 4.4.2
+    core: 4.4.3
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.83.2
