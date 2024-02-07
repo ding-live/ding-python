@@ -9,8 +9,8 @@ from typing import Optional
 
 @dataclasses.dataclass
 class LookupRequest:
-    customer_uuid: str = dataclasses.field(metadata={'header': { 'field_name': 'customer-uuid', 'style': 'simple', 'explode': False }})
     phone_number: str = dataclasses.field(metadata={'path_param': { 'field_name': 'phone_number', 'style': 'simple', 'explode': False }})
+    customer_uuid: str = dataclasses.field(metadata={'header': { 'field_name': 'customer-uuid', 'style': 'simple', 'explode': False }})
     
 
 
@@ -19,10 +19,10 @@ class LookupRequest:
 class LookupResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     lookup_response: Optional[components_lookupresponse.LookupResponse] = dataclasses.field(default=None)
     r"""OK"""
     

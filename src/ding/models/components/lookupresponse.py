@@ -25,19 +25,19 @@ class LineType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class LookupResponse:
-    carrier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('carrier'), 'exclude': lambda f: f is None }})
-    r"""The carrier of the phone number."""
-    country_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country_code'), 'exclude': lambda f: f is None }})
-    r"""The ISO 3166-1 alpha-2 country code of the phone number."""
-    line_type: Optional[LineType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_type'), 'exclude': lambda f: f is None }})
-    r"""The type of phone line."""
+    phone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number'), 'exclude': lambda f: f is None }})
+    r"""An E.164 formatted phone number."""
     mcc: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mcc'), 'exclude': lambda f: f is None }})
     r"""The mobile country code of the phone number."""
     mnc: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mnc'), 'exclude': lambda f: f is None }})
     r"""The mobile network code of the phone number."""
+    carrier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('carrier'), 'exclude': lambda f: f is None }})
+    r"""The carrier of the phone number."""
+    country_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country_code'), 'exclude': lambda f: f is None }})
+    r"""The ISO 3166-1 alpha-2 country code of the phone number."""
     number_ported: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_ported'), 'exclude': lambda f: f is None }})
     r"""Whether the phone number has been ported."""
-    phone_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number'), 'exclude': lambda f: f is None }})
-    r"""An E.164 formatted phone number."""
+    line_type: Optional[LineType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_type'), 'exclude': lambda f: f is None }})
+    r"""The type of phone line."""
     
 

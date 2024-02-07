@@ -169,3 +169,13 @@ Based on:
 - [python v2.0.0] .
 ### Releases
 - [PyPI v2.0.0] https://pypi.org/project/ding_api_client/2.0.0 - .
+
+## 2024-02-07 00:09:45
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.170.1 (2.250.12) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v3.0.0] .
+### Releases
+- [PyPI v3.0.0] https://pypi.org/project/ding_api_client/3.0.0 - .

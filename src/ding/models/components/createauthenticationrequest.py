@@ -21,23 +21,23 @@ class CreateAuthenticationRequest:
     r"""Your customer UUID, which can be found in the API settings in the dashboard."""
     phone_number: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone_number') }})
     r"""An E.164 formatted phone number to send the OTP to."""
-    app_realm: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('app_realm'), 'exclude': lambda f: f is None }})
-    r"""The Android SMS Retriever API hash code that identifies your app. This allows you to automatically retrieve and fill the OTP code on Android devices."""
+    ip: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ip'), 'exclude': lambda f: f is None }})
+    r"""The IP address of the user's device."""
+    device_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('device_id'), 'exclude': lambda f: f is None }})
+    r"""Unique identifier for the user's device. For Android, this corresponds to the `ANDROID_ID` and for iOS, this corresponds to the `identifierForVendor`."""
+    device_type: Optional[DeviceType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('device_type'), 'exclude': lambda f: f is None }})
+    r"""The type of device the user is using."""
     app_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('app_version'), 'exclude': lambda f: f is None }})
     r"""The version of your application."""
     callback_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('callback_url'), 'exclude': lambda f: f is None }})
     r"""A webhook URL to which delivery statuses will be sent."""
-    device_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('device_id'), 'exclude': lambda f: f is None }})
-    r"""Unique identifier for the user's device. For Android, this corresponds to the `ANDROID_ID` and for iOS, this corresponds to the `identifierForVendor`."""
-    device_model: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('device_model'), 'exclude': lambda f: f is None }})
-    r"""The model of the user's device."""
-    device_type: Optional[DeviceType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('device_type'), 'exclude': lambda f: f is None }})
-    r"""The type of device the user is using."""
-    ip: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ip'), 'exclude': lambda f: f is None }})
-    r"""The IP address of the user's device."""
-    is_returning_user: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_returning_user'), 'exclude': lambda f: f is None }})
-    r"""Whether the user is a returning user on your app."""
+    app_realm: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('app_realm'), 'exclude': lambda f: f is None }})
+    r"""The Android SMS Retriever API hash code that identifies your app. This allows you to automatically retrieve and fill the OTP code on Android devices."""
     os_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('os_version'), 'exclude': lambda f: f is None }})
     r"""The version of the user's device operating system."""
+    device_model: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('device_model'), 'exclude': lambda f: f is None }})
+    r"""The model of the user's device."""
+    is_returning_user: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_returning_user'), 'exclude': lambda f: f is None }})
+    r"""Whether the user is a returning user on your app."""
     
 

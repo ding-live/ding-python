@@ -31,11 +31,6 @@ class RetryAuthenticationResponseStatus(str, Enum):
 class RetryAuthenticationResponse:
     authentication_uuid: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authentication_uuid'), 'exclude': lambda f: f is None }})
     r"""The UUID of the corresponding authentication."""
-    created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    next_retry_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_retry_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    r"""The time at which the next retry will be available."""
-    remaining_retry: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remaining_retry'), 'exclude': lambda f: f is None }})
-    r"""The number of remaining retries."""
     status: Optional[RetryAuthenticationResponseStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""The status of the retry. Possible values are:
       * `approved` - The retry was approved and a new code was sent.
@@ -45,5 +40,10 @@ class RetryAuthenticationResponse:
       * `expired_auth` - The authentication has expired and cannot be retried.
       * `already_validated` - The authentication has already been validated.
     """
+    created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
+    next_retry_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_retry_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
+    r"""The time at which the next retry will be available."""
+    remaining_retry: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remaining_retry'), 'exclude': lambda f: f is None }})
+    r"""The number of remaining retries."""
     
 

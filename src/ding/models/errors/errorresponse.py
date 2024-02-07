@@ -62,10 +62,10 @@ class ErrorResponse(Exception):
       * `invalid_device_model` - The provided device model is invalid.
       * `invalid_device_id` - The provided device ID is invalid.
     """
-    doc_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doc_url'), 'exclude': lambda f: f is None }})
-    r"""A link to the documentation that describes the error."""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     r"""A human-readable message that describes the error."""
+    doc_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doc_url'), 'exclude': lambda f: f is None }})
+    r"""A link to the documentation that describes the error."""
     
 
     def __str__(self) -> str:
