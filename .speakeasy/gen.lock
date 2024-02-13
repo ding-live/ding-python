@@ -4,7 +4,7 @@ management:
   docChecksum: 5e4ef027bc51f54368e8b1607b77c098
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.250.12
+  generationVersion: 2.253.0
   releaseVersion: 3.0.0
   configChecksum: bf397ab862598b3c722dfd575b9cddc0
   repoURL: https://github.com/ding-live/ding-python.git

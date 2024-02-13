@@ -17,7 +17,6 @@ Perform a phone number lookup
 
 ```python
 import ding
-from ding.models import operations
 
 s = ding.Ding(
     api_key="YOUR_API_KEY",

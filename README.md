@@ -120,7 +120,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import ding
-from ding.models import components
+from ding.models import components, errors
 
 s = ding.Ding(
     api_key="YOUR_API_KEY",
@@ -135,10 +135,10 @@ res = None
 try:
     res = s.otp.create_autentication(req)
 except errors.ErrorResponse as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.create_authentication_response is not None:
