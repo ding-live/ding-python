@@ -19,7 +19,7 @@ class Ding:
 
     def __init__(self,
                  api_key: Union[str, Callable[[], str]],
-                 server: str = None,
+                 server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
                  client: requests_http.Session = None,
@@ -29,8 +29,8 @@ class Ding:
         
         :param api_key: The api_key required for authentication
         :type api_key: Union[str, Callable[[], str]]
-        :param server: The server by name to use for all operations
-        :type server: str
+        :param server_idx: The index of the server to use for all operations
+        :type server_idx: int
         :param server_url: The server URL to use for all operations
         :type server_url: str
         :param url_params: Parameters to optionally template the server URL with
@@ -53,7 +53,7 @@ class Ding:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security, server_url, server, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, retry_config=retry_config)
        
         self._init_sdks()
     

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 81c437b1-ab8d-4cec-8b8f-8f71d1bdb7a2
 management:
-  docChecksum: 5e4ef027bc51f54368e8b1607b77c098
+  docChecksum: 01bd42610039f89b431afa7eb1a3c56c
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.258.0
-  releaseVersion: 3.0.1
-  configChecksum: a4f84b7ea36f5ec4e08fede30e8e4fa5
+  generationVersion: 2.263.3
+  releaseVersion: 3.1.0
+  configChecksum: fdf78d6cb0a4255a77998d8804ad6db0
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
@@ -18,7 +18,6 @@ features:
     flattening: 2.81.1
     globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
-    serverIDs: 2.81.1
 generatedFiles:
   - src/ding/sdkconfiguration.py
   - src/ding/otp.py
