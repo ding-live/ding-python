@@ -4,19 +4,19 @@ management:
   docChecksum: 01bd42610039f89b431afa7eb1a3c56c
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.263.3
-  releaseVersion: 3.1.0
-  configChecksum: fdf78d6cb0a4255a77998d8804ad6db0
+  generationVersion: 2.275.4
+  releaseVersion: 3.2.0
+  configChecksum: da7347384b05ba9cf7e12fa6a04aaab7
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
   published: true
 features:
   python:
-    core: 4.4.6
+    core: 4.5.0
     examples: 2.81.3
     flattening: 2.81.1
-    globalSecurity: 2.83.2
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/ding/sdkconfiguration.py
@@ -73,3 +73,6 @@ generatedFiles:
   - docs/sdks/lookup/README.md
   - USAGE.md
   - .gitattributes
+  - src/ding/_hooks/sdkhooks.py
+  - src/ding/_hooks/types.py
+  - src/ding/_hooks/__init__.py
