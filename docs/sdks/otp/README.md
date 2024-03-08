@@ -35,6 +35,7 @@ res = s.otp.create_autentication(req)
 if res.create_authentication_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -79,6 +80,7 @@ res = s.otp.check(req)
 if res.create_check_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -122,6 +124,7 @@ res = s.otp.retry(req)
 if res.retry_authentication_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

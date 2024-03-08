@@ -28,6 +28,7 @@ res = s.lookup.lookup(phone_number='<value>', customer_uuid='6e93aa15-9177-4d09-
 if res.lookup_response is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

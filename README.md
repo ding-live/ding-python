@@ -38,6 +38,7 @@ res = s.otp.create_autentication(req)
 if res.create_authentication_response is not None:
     # handle response
     pass
+
 ```
 
 ### Check a code
@@ -64,6 +65,7 @@ res = s.otp.check(req)
 if res.create_check_response is not None:
     # handle response
     pass
+
 ```
 
 ### Perform a retry
@@ -89,6 +91,7 @@ res = s.otp.retry(req)
 if res.retry_authentication_response is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -144,6 +147,7 @@ except errors.SDKError as e:
 if res.create_authentication_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -179,6 +183,7 @@ res = s.otp.create_autentication(req)
 if res.create_authentication_response is not None:
     # handle response
     pass
+
 ```
 
 
@@ -204,6 +209,7 @@ res = s.otp.create_autentication(req)
 if res.create_authentication_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -253,6 +259,7 @@ res = s.otp.create_autentication(req)
 if res.create_authentication_response is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 
