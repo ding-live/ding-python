@@ -8,7 +8,7 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateAutenticationResponse:
+class CreateAuthenticationResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()

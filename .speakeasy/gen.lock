@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 81c437b1-ab8d-4cec-8b8f-8f71d1bdb7a2
 management:
-  docChecksum: 01bd42610039f89b431afa7eb1a3c56c
+  docChecksum: a2a29dc8a8df536c8b2553db26987fad
   docVersion: 1.0.0
-  speakeasyVersion: 1.204.1
+  speakeasyVersion: 1.205.2
   generationVersion: 2.279.1
-  releaseVersion: 3.3.0
-  configChecksum: 4ccbc99e3c80cd1846b9de2bbd606d0d
+  releaseVersion: 3.3.1
+  configChecksum: 10c6c4be305f33df57c8d02daac16847
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
@@ -33,7 +33,7 @@ generatedFiles:
   - src/ding/utils/utils.py
   - src/ding/models/errors/sdkerror.py
   - tests/helpers.py
-  - src/ding/models/operations/create_autentication.py
+  - src/ding/models/operations/create_authentication.py
   - src/ding/models/operations/check.py
   - src/ding/models/operations/retry.py
   - src/ding/models/operations/lookup.py
@@ -50,7 +50,7 @@ generatedFiles:
   - src/ding/models/errors/__init__.py
   - src/ding/models/operations/__init__.py
   - src/ding/models/components/__init__.py
-  - docs/models/operations/createautenticationresponse.md
+  - docs/models/operations/createauthenticationresponse.md
   - docs/models/operations/checkresponse.md
   - docs/models/operations/retryresponse.md
   - docs/models/operations/lookuprequest.md

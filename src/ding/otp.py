@@ -16,9 +16,9 @@ class Otp:
         
     
     
-    def create_autentication(self, request: Optional[components.CreateAuthenticationRequest]) -> operations.CreateAutenticationResponse:
+    def create_authentication(self, request: Optional[components.CreateAuthenticationRequest]) -> operations.CreateAuthenticationResponse:
         r"""Send a code"""
-        hook_ctx = HookContext(operation_id='create-autentication', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        hook_ctx = HookContext(operation_id='create-authentication', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/authentication'
@@ -56,7 +56,7 @@ class Otp:
             http_res = result
         
         
-        res = operations.CreateAutenticationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        res = operations.CreateAuthenticationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                

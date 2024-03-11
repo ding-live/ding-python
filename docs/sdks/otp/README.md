@@ -7,11 +7,11 @@ Send OTP codes to your users using their phone numbers.
 
 ### Available Operations
 
-* [create_autentication](#create_autentication) - Send a code
+* [create_authentication](#create_authentication) - Send a code
 * [check](#check) - Check a code
 * [retry](#retry) - Perform a retry
 
-## create_autentication
+## create_authentication
 
 Send a code
 
@@ -26,11 +26,11 @@ s = ding.Ding(
 )
 
 req = components.CreateAuthenticationRequest(
-    customer_uuid='eae192ab-9e1e-4b21-b5b1-bfcb79a32fcc',
+    customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
     phone_number='+1234567890',
 )
 
-res = s.otp.create_autentication(req)
+res = s.otp.create_authentication(req)
 
 if res.create_authentication_response is not None:
     # handle response
@@ -47,7 +47,7 @@ if res.create_authentication_response is not None:
 
 ### Response
 
-**[operations.CreateAutenticationResponse](../../models/operations/createautenticationresponse.md)**
+**[operations.CreateAuthenticationResponse](../../models/operations/createauthenticationresponse.md)**
 ### Errors
 
 | Error Object         | Status Code          | Content Type         |

@@ -39,5 +39,7 @@ class CreateAuthenticationRequest:
     r"""The model of the user's device."""
     is_returning_user: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_returning_user'), 'exclude': lambda f: f is None }})
     r"""Whether the user is a returning user on your app."""
+    template_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_id'), 'exclude': lambda f: f is None }})
+    r"""The template id associated with the message content variant to be sent."""
     
 

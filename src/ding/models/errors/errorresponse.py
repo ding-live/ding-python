@@ -22,6 +22,7 @@ class Code(str, Enum):
       * `invalid_os_version` - The provided OS version is invalid.
       * `invalid_device_model` - The provided device model is invalid.
       * `invalid_device_id` - The provided device ID is invalid.
+      * `invalid_template_id` - The provided template ID is invalid.
     """
     INVALID_PHONE_NUMBER = 'invalid_phone_number'
     INTERNAL_SERVER_ERROR = 'internal_server_error'
@@ -39,6 +40,7 @@ class Code(str, Enum):
     INVALID_OS_VERSION = 'invalid_os_version'
     INVALID_DEVICE_MODEL = 'invalid_device_model'
     INVALID_DEVICE_ID = 'invalid_device_id'
+    INVALID_TEMPLATE_ID = 'invalid_template_id'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -61,6 +63,7 @@ class ErrorResponse(Exception):
       * `invalid_os_version` - The provided OS version is invalid.
       * `invalid_device_model` - The provided device model is invalid.
       * `invalid_device_id` - The provided device ID is invalid.
+      * `invalid_template_id` - The provided template ID is invalid.
     """
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     r"""A human-readable message that describes the error."""
