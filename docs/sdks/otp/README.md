@@ -9,6 +9,7 @@ Send OTP codes to your users using their phone numbers.
 
 * [create_authentication](#create_authentication) - Send a code
 * [check](#check) - Check a code
+* [feedback](#feedback) - Send feedback
 * [retry](#retry) - Perform a retry
 
 ## create_authentication
@@ -99,6 +100,50 @@ if res.create_check_response is not None:
 | -------------------- | -------------------- | -------------------- |
 | errors.ErrorResponse | 400                  | application/json     |
 | errors.SDKError      | 4x-5xx               | */*                  |
+
+## feedback
+
+Send feedback
+
+### Example Usage
+
+```python
+import ding
+from ding.models import components
+
+s = ding.Ding(
+    api_key="YOUR_API_KEY",
+)
+
+req = components.FeedbackRequest(
+    customer_uuid='c0c405fa-6bcb-4094-9430-7d6e2428ff23',
+    phone_number='+1234567890',
+    status=components.FeedbackRequestStatus.ONBOARDED,
+)
+
+res = s.otp.feedback(req)
+
+if res.feedback_response is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [components.FeedbackRequest](../../models/components/feedbackrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
+
+
+### Response
+
+**[operations.FeedbackResponse](../../models/operations/feedbackresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## retry
 

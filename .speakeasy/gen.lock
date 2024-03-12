@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 81c437b1-ab8d-4cec-8b8f-8f71d1bdb7a2
 management:
-  docChecksum: a2a29dc8a8df536c8b2553db26987fad
+  docChecksum: bd5703227a0834ce8cffa01539ad4346
   docVersion: 1.0.0
-  speakeasyVersion: 1.205.2
-  generationVersion: 2.279.1
-  releaseVersion: 3.3.1
-  configChecksum: 10c6c4be305f33df57c8d02daac16847
+  speakeasyVersion: 1.206.3
+  generationVersion: 2.280.6
+  releaseVersion: 3.3.2
+  configChecksum: 885002cad6efdd028ed10b9b96737c51
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
@@ -17,7 +17,7 @@ features:
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.83.4
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     responseFormat: 0.1.0
 generatedFiles:
   - src/ding/sdkconfiguration.py
@@ -35,12 +35,15 @@ generatedFiles:
   - tests/helpers.py
   - src/ding/models/operations/create_authentication.py
   - src/ding/models/operations/check.py
+  - src/ding/models/operations/feedback.py
   - src/ding/models/operations/retry.py
   - src/ding/models/operations/lookup.py
   - src/ding/models/components/createauthenticationresponse.py
   - src/ding/models/components/createauthenticationrequest.py
   - src/ding/models/components/createcheckresponse.py
   - src/ding/models/components/createcheckrequest.py
+  - src/ding/models/components/feedbackresponse.py
+  - src/ding/models/components/feedbackrequest.py
   - src/ding/models/components/retryauthenticationresponse.py
   - src/ding/models/components/retryauthenticationrequest.py
   - src/ding/models/components/lookupresponse.py
@@ -52,6 +55,7 @@ generatedFiles:
   - src/ding/models/components/__init__.py
   - docs/models/operations/createauthenticationresponse.md
   - docs/models/operations/checkresponse.md
+  - docs/models/operations/feedbackresponse.md
   - docs/models/operations/retryresponse.md
   - docs/models/operations/lookuprequest.md
   - docs/models/operations/lookupresponse.md
@@ -62,6 +66,9 @@ generatedFiles:
   - docs/models/components/createcheckresponsestatus.md
   - docs/models/components/createcheckresponse.md
   - docs/models/components/createcheckrequest.md
+  - docs/models/components/feedbackresponse.md
+  - docs/models/components/feedbackrequeststatus.md
+  - docs/models/components/feedbackrequest.md
   - docs/models/components/retryauthenticationresponsestatus.md
   - docs/models/components/retryauthenticationresponse.md
   - docs/models/components/retryauthenticationrequest.md
