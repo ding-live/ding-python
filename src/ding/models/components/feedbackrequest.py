@@ -9,6 +9,7 @@ from enum import Enum
 class FeedbackRequestStatus(str, Enum):
     r"""The type of the feedback."""
     ONBOARDED = 'onboarded'
+    NOT_ONBOARDED = 'not_onboarded'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
