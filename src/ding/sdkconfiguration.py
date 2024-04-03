@@ -7,7 +7,7 @@ from .utils import utils
 from .utils.retries import RetryConfig
 from dataclasses import dataclass
 from ding.models import components
-from typing import Callable, Dict, Tuple, Union
+from typing import Callable, Dict, Optional, Tuple, Union
 
 
 SERVERS = [
@@ -20,18 +20,18 @@ SERVERS = [
 class SDKConfiguration:
     client: requests_http.Session
     security: Union[components.Security,Callable[[], components.Security]] = None
-    server_url: str = ''
-    server_idx: int = 0
+    server_url: Optional[str] = ''
+    server_idx: Optional[int] = 0
     language: str = 'python'
     openapi_doc_version: str = '1.0.0'
-    sdk_version: str = '3.3.5'
-    gen_version: str = '2.291.0'
-    user_agent: str = 'speakeasy-sdk/python 3.3.5 2.291.0 1.0.0 ding_api_client'
-    retry_config: RetryConfig = None
-    _hooks: SDKHooks = None
+    sdk_version: str = '3.4.0'
+    gen_version: str = '2.298.0'
+    user_agent: str = 'speakeasy-sdk/python 3.4.0 2.298.0 1.0.0 ding_api_client'
+    retry_config: Optional[RetryConfig] = None
+    _hooks: Optional[SDKHooks] = None
 
     def get_server_details(self) -> Tuple[str, Dict[str, str]]:
-        if self.server_url:
+        if self.server_url is not None and self.server_url != '':
             return utils.remove_suffix(self.server_url, '/'), {}
         if self.server_idx is None:
             self.server_idx = 0

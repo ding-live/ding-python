@@ -11,7 +11,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 3.3.5
+  version: 3.4.0
   additionalDependencies:
     dependencies: {}
     extraDependencies:
@@ -32,4 +32,5 @@ python:
   maxMethodParams: 4
   outputModelSuffix: output
   packageName: ding_api_client
+  projectUrls: {}
   responseFormat: envelope
