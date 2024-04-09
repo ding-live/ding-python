@@ -26,7 +26,7 @@ class Lookup:
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.LookupRequest, base_url, '/lookup/{phone_number}', request)
+        url = utils.generate_url(base_url, '/lookup/{phone_number}', request)
         
         if callable(self.sdk_configuration.security):
             headers, query_params = utils.get_security(self.sdk_configuration.security())
