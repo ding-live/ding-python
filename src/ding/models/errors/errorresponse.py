@@ -26,6 +26,7 @@ class Code(str, Enum):
       * `duplicated_feedback_status` - Duplicated feedback status has found.
       * `invalid_feedback_status` - The provided feedback status is invalid.
       * `invalid_template_id` - The provided template ID is invalid.
+      * `suspended_account` - Your account has been suspended.
     """
     INVALID_PHONE_NUMBER = 'invalid_phone_number'
     INTERNAL_SERVER_ERROR = 'internal_server_error'
@@ -47,6 +48,7 @@ class Code(str, Enum):
     DUPLICATED_FEEDBACK_STATUS = 'duplicated_feedback_status'
     INVALID_FEEDBACK_STATUS = 'invalid_feedback_status'
     INVALID_TEMPLATE_ID = 'invalid_template_id'
+    SUSPENDED_ACCOUNT = 'suspended_account'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -73,6 +75,7 @@ class ErrorResponse(Exception):
       * `duplicated_feedback_status` - Duplicated feedback status has found.
       * `invalid_feedback_status` - The provided feedback status is invalid.
       * `invalid_template_id` - The provided template ID is invalid.
+      * `suspended_account` - Your account has been suspended.
     """
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     r"""A human-readable message that describes the error."""
