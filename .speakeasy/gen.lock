@@ -3,17 +3,17 @@ id: 81c437b1-ab8d-4cec-8b8f-8f71d1bdb7a2
 management:
   docChecksum: 9894bd098e7dd9f81402a9c6ea0a6ea0
   docVersion: 1.0.0
-  speakeasyVersion: 1.269.1
-  generationVersion: 2.312.1
-  releaseVersion: 3.4.4
-  configChecksum: ed63d5fc1c5da1e0821eaa17cf40ae95
+  speakeasyVersion: 1.277.8
+  generationVersion: 2.319.10
+  releaseVersion: 3.4.5
+  configChecksum: bbc5b9f15ea4c57009d51c0f5f0bec13
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
   published: true
 features:
   python:
-    core: 4.6.5
+    core: 4.6.7
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.83.5
@@ -32,7 +32,6 @@ generatedFiles:
   - src/ding/utils/retries.py
   - src/ding/utils/utils.py
   - src/ding/models/errors/sdkerror.py
-  - tests/helpers.py
   - src/ding/models/operations/create_authentication.py
   - src/ding/models/operations/check.py
   - src/ding/models/operations/feedback.py
