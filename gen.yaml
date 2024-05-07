@@ -11,7 +11,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 3.4.5
+  version: 3.5.0
   additionalDependencies:
     dependencies: {}
     extraDependencies:
@@ -30,6 +30,7 @@ python:
       webhooks: models/webhooks
   inputModelSuffix: input
   maxMethodParams: 4
+  methodArguments: require-security-and-request
   outputModelSuffix: output
   packageName: ding_api_client
   projectUrls: {}

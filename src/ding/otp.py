@@ -16,7 +16,7 @@ class Otp:
         
     
     
-    def create_authentication(self, request: Optional[components.CreateAuthenticationRequest]) -> operations.CreateAuthenticationResponse:
+    def create_authentication(self, request: Optional[components.CreateAuthenticationRequest] = None) -> operations.CreateAuthenticationResponse:
         r"""Send a code"""
         hook_ctx = HookContext(operation_id='create-authentication', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -58,6 +58,7 @@ class Otp:
         res = operations.CreateAuthenticationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[components.CreateAuthenticationResponse])
                 res.create_authentication_response = out
@@ -65,6 +66,7 @@ class Otp:
                 content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResponse)
                 raise out
@@ -80,7 +82,7 @@ class Otp:
 
     
     
-    def check(self, request: Optional[components.CreateCheckRequest]) -> operations.CheckResponse:
+    def check(self, request: Optional[components.CreateCheckRequest] = None) -> operations.CheckResponse:
         r"""Check a code"""
         hook_ctx = HookContext(operation_id='check', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -122,6 +124,7 @@ class Otp:
         res = operations.CheckResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[components.CreateCheckResponse])
                 res.create_check_response = out
@@ -129,6 +132,7 @@ class Otp:
                 content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResponse)
                 raise out
@@ -144,7 +148,7 @@ class Otp:
 
     
     
-    def feedback(self, request: Optional[components.FeedbackRequest]) -> operations.FeedbackResponse:
+    def feedback(self, request: Optional[components.FeedbackRequest] = None) -> operations.FeedbackResponse:
         r"""Send feedback"""
         hook_ctx = HookContext(operation_id='feedback', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -186,6 +190,7 @@ class Otp:
         res = operations.FeedbackResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[components.FeedbackResponse])
                 res.feedback_response = out
@@ -195,6 +200,7 @@ class Otp:
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         else:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[errors.ErrorResponse])
                 res.error_response = out
@@ -206,7 +212,7 @@ class Otp:
 
     
     
-    def retry(self, request: Optional[components.RetryAuthenticationRequest]) -> operations.RetryResponse:
+    def retry(self, request: Optional[components.RetryAuthenticationRequest] = None) -> operations.RetryResponse:
         r"""Perform a retry"""
         hook_ctx = HookContext(operation_id='retry', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -248,6 +254,7 @@ class Otp:
         res = operations.RetryResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type') or '', raw_response=http_res)
         
         if http_res.status_code == 200:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[components.RetryAuthenticationResponse])
                 res.retry_authentication_response = out
@@ -255,6 +262,7 @@ class Otp:
                 content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
+            # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResponse)
                 raise out
