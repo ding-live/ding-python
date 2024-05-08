@@ -22,6 +22,7 @@ s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 
+
 res = s.lookup.lookup(phone_number='<value>', customer_uuid='6e93aa15-9177-4d09-8395-b69ce50db1c8')
 
 if res.lookup_response is not None:
