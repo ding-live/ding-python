@@ -16,7 +16,7 @@ class Otp:
         
     
     
-    def create_authentication(self, request: Optional[components.CreateAuthenticationRequest]) -> operations.CreateAuthenticationResponse:
+    def create_authentication(self, request: Optional[components.CreateAuthenticationRequest] = None) -> operations.CreateAuthenticationResponse:
         r"""Send a code"""
         hook_ctx = HookContext(operation_id='create-authentication', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -82,7 +82,7 @@ class Otp:
 
     
     
-    def check(self, request: Optional[components.CreateCheckRequest]) -> operations.CheckResponse:
+    def check(self, request: Optional[components.CreateCheckRequest] = None) -> operations.CheckResponse:
         r"""Check a code"""
         hook_ctx = HookContext(operation_id='check', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -148,7 +148,7 @@ class Otp:
 
     
     
-    def feedback(self, request: Optional[components.FeedbackRequest]) -> operations.FeedbackResponse:
+    def feedback(self, request: Optional[components.FeedbackRequest] = None) -> operations.FeedbackResponse:
         r"""Send feedback"""
         hook_ctx = HookContext(operation_id='feedback', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -212,7 +212,7 @@ class Otp:
 
     
     
-    def retry(self, request: Optional[components.RetryAuthenticationRequest]) -> operations.RetryResponse:
+    def retry(self, request: Optional[components.RetryAuthenticationRequest] = None) -> operations.RetryResponse:
         r"""Perform a retry"""
         hook_ctx = HookContext(operation_id='retry', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
