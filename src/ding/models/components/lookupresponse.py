@@ -7,6 +7,7 @@ from ding import utils
 from enum import Enum
 from typing import Optional
 
+
 class LineType(str, Enum):
     r"""The type of phone line."""
     FIXED_LINE = 'FixedLine'

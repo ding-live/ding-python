@@ -6,6 +6,7 @@ from dataclasses_json import Undefined, dataclass_json
 from ding import utils
 from enum import Enum
 
+
 class FeedbackRequestStatus(str, Enum):
     r"""The type of the feedback."""
     ONBOARDED = 'onboarded'

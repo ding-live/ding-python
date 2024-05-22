@@ -7,6 +7,7 @@ from ding import utils
 from enum import Enum
 from typing import Optional
 
+
 class CreateCheckResponseStatus(str, Enum):
     r"""The status of the check. Possible values are:
       * `valid` - The code is valid.

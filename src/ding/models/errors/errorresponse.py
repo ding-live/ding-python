@@ -7,27 +7,9 @@ from ding import utils
 from enum import Enum
 from typing import Optional
 
+
 class Code(str, Enum):
-    r"""A machine-readable code that describes the error. Possible values are:
-      * `invalid_phone_number` - This is not a valid E.164 number.
-      * `internal_server_error` - An internal server error occurred.
-      * `bad_request` - The request was malformed.
-      * `account_invalid` - The provided customer UUID is invalid.
-      * `negative_balance` - You have a negative balance.
-      * `invalid_line` - Ding does not support this type of phone number.
-      * `unsupported_region` - Ding does not support this region yet.
-      * `invalid_auth_uuid` - The provided authentication UUID is invalid.
-      * `blocked_number` - The phone number is in the blocklist.
-      * `invalid_app_version` - The provided application version is invalid.
-      * `invalid_os_version` - The provided OS version is invalid.
-      * `invalid_device_model` - The provided device model is invalid.
-      * `invalid_device_id` - The provided device ID is invalid.
-      * `no_associated_auth_found` - The associated authentication was not found.
-      * `duplicated_feedback_status` - Duplicated feedback status has found.
-      * `invalid_feedback_status` - The provided feedback status is invalid.
-      * `invalid_template_id` - The provided template ID is invalid.
-      * `suspended_account` - Your account has been suspended.
-    """
+    r"""A machine-readable code that describes the error."""
     INVALID_PHONE_NUMBER = 'invalid_phone_number'
     INTERNAL_SERVER_ERROR = 'internal_server_error'
     BAD_REQUEST = 'bad_request'
@@ -57,26 +39,7 @@ class Code(str, Enum):
 class ErrorResponse(Exception):
     r"""Bad Request"""
     code: Optional[Code] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
-    r"""A machine-readable code that describes the error. Possible values are:
-      * `invalid_phone_number` - This is not a valid E.164 number.
-      * `internal_server_error` - An internal server error occurred.
-      * `bad_request` - The request was malformed.
-      * `account_invalid` - The provided customer UUID is invalid.
-      * `negative_balance` - You have a negative balance.
-      * `invalid_line` - Ding does not support this type of phone number.
-      * `unsupported_region` - Ding does not support this region yet.
-      * `invalid_auth_uuid` - The provided authentication UUID is invalid.
-      * `blocked_number` - The phone number is in the blocklist.
-      * `invalid_app_version` - The provided application version is invalid.
-      * `invalid_os_version` - The provided OS version is invalid.
-      * `invalid_device_model` - The provided device model is invalid.
-      * `invalid_device_id` - The provided device ID is invalid.
-      * `no_associated_auth_found` - The associated authentication was not found.
-      * `duplicated_feedback_status` - Duplicated feedback status has found.
-      * `invalid_feedback_status` - The provided feedback status is invalid.
-      * `invalid_template_id` - The provided template ID is invalid.
-      * `suspended_account` - Your account has been suspended.
-    """
+    r"""A machine-readable code that describes the error."""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     r"""A human-readable message that describes the error."""
     doc_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doc_url'), 'exclude': lambda f: f is None }})

@@ -9,6 +9,7 @@ from ding import utils
 from enum import Enum
 from typing import Optional
 
+
 class RetryAuthenticationResponseStatus(str, Enum):
     r"""The status of the retry. Possible values are:
       * `approved` - The retry was approved and a new code was sent.

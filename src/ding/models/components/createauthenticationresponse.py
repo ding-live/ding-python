@@ -9,6 +9,7 @@ from ding import utils
 from enum import Enum
 from typing import Optional
 
+
 class Status(str, Enum):
     r"""The status of the authentication. Possible values are:
       * `pending` - The OTP code is being sent.

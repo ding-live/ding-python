@@ -7,6 +7,7 @@ from ding import utils
 from enum import Enum
 from typing import Optional
 
+
 class DeviceType(str, Enum):
     r"""The type of device the user is using."""
     IOS = 'IOS'
