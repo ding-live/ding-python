@@ -12,6 +12,7 @@ s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 
+
 res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
     customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
     phone_number='+1234567890',
@@ -35,6 +36,7 @@ from ding.models import components
 s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
+
 
 res = s.otp.check(request=components.CreateCheckRequest(
     customer_uuid='e0e7b0e9-739d-424b-922f-1c2cb48ab077',
@@ -60,6 +62,7 @@ from ding.models import components
 s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
+
 
 res = s.otp.retry(request=components.RetryAuthenticationRequest(
     customer_uuid='a74ee547-564d-487a-91df-37fb25413a91',
