@@ -42,5 +42,7 @@ class CreateAuthenticationRequest:
     r"""Whether the user is a returning user on your app."""
     template_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_id'), 'exclude': lambda f: f is None }})
     r"""The template id associated with the message content variant to be sent."""
+    correlation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('correlation_id'), 'exclude': lambda f: f is None }})
+    r"""A unique, user-defined identifier that will be included in webhook events"""
     
 

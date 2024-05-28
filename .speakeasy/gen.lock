@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 81c437b1-ab8d-4cec-8b8f-8f71d1bdb7a2
 management:
-  docChecksum: ae16b62a3e75707dc8c8098ef538764b
+  docChecksum: 85248a8dd6a5cd6fea1b82dfc30249e9
   docVersion: 1.0.0
-  speakeasyVersion: 1.295.1
-  generationVersion: 2.335.5
-  releaseVersion: 3.7.2
-  configChecksum: af9626845057100e6828c18c99f0b66d
+  speakeasyVersion: 1.296.1
+  generationVersion: 2.338.1
+  releaseVersion: 3.7.3
+  configChecksum: a06d3eb531872bedf3cc22b5b9bcf81a
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
