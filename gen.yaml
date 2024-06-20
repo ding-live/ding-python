@@ -11,7 +11,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 3.7.4
+  version: 3.7.5
   additionalDependencies:
     dependencies: {}
     extraDependencies:
@@ -35,3 +35,4 @@ python:
   packageName: ding_api_client
   projectUrls: {}
   responseFormat: envelope
+  templateVersion: v1
