@@ -73,17 +73,13 @@ Perform a retry if a user has not received the code.
 
 ```python
 import ding
-from ding.models import components
 
 s = ding.Ding(
     api_key="YOUR_API_KEY",
 )
 
 
-res = s.otp.retry(request=components.RetryAuthenticationRequest(
-    customer_uuid='a74ee547-564d-487a-91df-37fb25413a91',
-    authentication_uuid='3c8b3a46-881e-4cdd-93a6-f7f238bf020a',
-))
+res = s.otp.retry()
 
 if res.retry_authentication_response is not None:
     # handle response
@@ -235,7 +231,7 @@ This SDK supports the following security scheme globally:
 | --------- | --------- | --------- |
 | `api_key` | apiKey    | API key   |
 
-To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
+To authenticate with the API the `null` parameter must be set when initializing the SDK client instance. For example:
 ```python
 import ding
 from ding.models import components
