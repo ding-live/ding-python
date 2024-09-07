@@ -31,8 +31,6 @@ if res.lookup_response is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -40,10 +38,10 @@ if res.lookup_response is not None:
 | `phone_number`     | *str*              | :heavy_check_mark: | N/A                |
 | `customer_uuid`    | *str*              | :heavy_check_mark: | N/A                |
 
-
 ### Response
 
 **[operations.LookupResponse](../../models/operations/lookupresponse.md)**
+
 ### Errors
 
 | Error Object         | Status Code          | Content Type         |

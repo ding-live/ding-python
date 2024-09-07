@@ -2,8 +2,28 @@
 
 The Ding Python library provides convenient access to the Ding API from applications written in the Python language.
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Ding: The OTP API allows you to send authentication codes to your users using their phone numbers.
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
+
+The SDK can be installed using the *pip* package manager, with dependencies and metadata stored in the `setup.py` file.
 
 ```bash
 pip install ding_api_client

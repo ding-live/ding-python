@@ -3,10 +3,10 @@ id: 81c437b1-ab8d-4cec-8b8f-8f71d1bdb7a2
 management:
   docChecksum: c2a5d8222f4117f238343d6187ef2751
   docVersion: 1.0.0
-  speakeasyVersion: 1.376.0
-  generationVersion: 2.402.5
-  releaseVersion: 3.8.6
-  configChecksum: e0986851c71555d3cb6512893642394d
+  speakeasyVersion: 1.392.1
+  generationVersion: 2.411.9
+  releaseVersion: 3.8.7
+  configChecksum: d97efb94f682a86b4a4d7e317803900f
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
@@ -14,7 +14,7 @@ management:
 features:
   python:
     additionalDependencies: 0.1.0
-    core: 4.8.6
+    core: 4.8.7
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.83.7
@@ -24,69 +24,114 @@ features:
     responseFormat: 0.1.0
     sdkHooks: 0.1.0
 generatedFiles:
-  - src/ding/sdkconfiguration.py
-  - src/ding/otp.py
-  - src/ding/lookup.py
-  - src/ding/sdk.py
+  - .gitattributes
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/components/createauthenticationrequest.md
+  - docs/models/components/createauthenticationresponse.md
+  - docs/models/components/createcheckrequest.md
+  - docs/models/components/createcheckresponse.md
+  - docs/models/components/createcheckresponsestatus.md
+  - docs/models/components/devicetype.md
+  - docs/models/components/feedbackrequest.md
+  - docs/models/components/feedbackrequeststatus.md
+  - docs/models/components/feedbackresponse.md
+  - docs/models/components/linetype.md
+  - docs/models/components/lookupresponse.md
+  - docs/models/components/retryauthenticationrequest.md
+  - docs/models/components/retryauthenticationresponse.md
+  - docs/models/components/retryauthenticationresponsestatus.md
+  - docs/models/components/security.md
+  - docs/models/components/status.md
+  - docs/models/errors/code.md
+  - docs/models/errors/errorresponse.md
+  - docs/models/operations/checkresponse.md
+  - docs/models/operations/createauthenticationresponse.md
+  - docs/models/operations/feedbackresponse.md
+  - docs/models/operations/lookuprequest.md
+  - docs/models/operations/lookupresponse.md
+  - docs/models/operations/retryresponse.md
+  - docs/sdks/ding/README.md
+  - docs/sdks/lookup/README.md
+  - docs/sdks/otp/README.md
   - py.typed
   - pylintrc
   - scripts/publish.sh
   - setup.py
   - src/ding/__init__.py
+  - src/ding/_hooks/__init__.py
+  - src/ding/_hooks/sdkhooks.py
+  - src/ding/_hooks/types.py
+  - src/ding/lookup.py
+  - src/ding/models/__init__.py
+  - src/ding/models/components/__init__.py
+  - src/ding/models/components/createauthenticationrequest.py
+  - src/ding/models/components/createauthenticationresponse.py
+  - src/ding/models/components/createcheckrequest.py
+  - src/ding/models/components/createcheckresponse.py
+  - src/ding/models/components/feedbackrequest.py
+  - src/ding/models/components/feedbackresponse.py
+  - src/ding/models/components/lookupresponse.py
+  - src/ding/models/components/retryauthenticationrequest.py
+  - src/ding/models/components/retryauthenticationresponse.py
+  - src/ding/models/components/security.py
+  - src/ding/models/errors/__init__.py
+  - src/ding/models/errors/errorresponse.py
+  - src/ding/models/errors/sdkerror.py
+  - src/ding/models/operations/__init__.py
+  - src/ding/models/operations/check.py
+  - src/ding/models/operations/create_authentication.py
+  - src/ding/models/operations/feedback.py
+  - src/ding/models/operations/lookup.py
+  - src/ding/models/operations/retry.py
+  - src/ding/otp.py
+  - src/ding/sdk.py
+  - src/ding/sdkconfiguration.py
   - src/ding/utils/__init__.py
   - src/ding/utils/retries.py
   - src/ding/utils/utils.py
-  - src/ding/models/errors/sdkerror.py
-  - src/ding/models/operations/create_authentication.py
-  - src/ding/models/operations/check.py
-  - src/ding/models/operations/feedback.py
-  - src/ding/models/operations/retry.py
-  - src/ding/models/operations/lookup.py
-  - src/ding/models/components/createauthenticationresponse.py
-  - src/ding/models/components/createauthenticationrequest.py
-  - src/ding/models/components/createcheckresponse.py
-  - src/ding/models/components/createcheckrequest.py
-  - src/ding/models/components/feedbackresponse.py
-  - src/ding/models/components/feedbackrequest.py
-  - src/ding/models/components/retryauthenticationresponse.py
-  - src/ding/models/components/retryauthenticationrequest.py
-  - src/ding/models/components/lookupresponse.py
-  - src/ding/models/components/security.py
-  - src/ding/models/errors/errorresponse.py
-  - src/ding/models/__init__.py
-  - src/ding/models/errors/__init__.py
-  - src/ding/models/operations/__init__.py
-  - src/ding/models/components/__init__.py
-  - docs/models/operations/createauthenticationresponse.md
-  - docs/models/operations/checkresponse.md
-  - docs/models/operations/feedbackresponse.md
-  - docs/models/operations/retryresponse.md
-  - docs/models/operations/lookuprequest.md
-  - docs/models/operations/lookupresponse.md
-  - docs/models/components/status.md
-  - docs/models/components/createauthenticationresponse.md
-  - docs/models/components/devicetype.md
-  - docs/models/components/createauthenticationrequest.md
-  - docs/models/components/createcheckresponsestatus.md
-  - docs/models/components/createcheckresponse.md
-  - docs/models/components/createcheckrequest.md
-  - docs/models/components/feedbackresponse.md
-  - docs/models/components/feedbackrequeststatus.md
-  - docs/models/components/feedbackrequest.md
-  - docs/models/components/retryauthenticationresponsestatus.md
-  - docs/models/components/retryauthenticationresponse.md
-  - docs/models/components/retryauthenticationrequest.md
-  - docs/models/components/linetype.md
-  - docs/models/components/lookupresponse.md
-  - docs/models/components/security.md
-  - docs/models/errors/code.md
-  - docs/models/errors/errorresponse.md
-  - docs/sdks/ding/README.md
-  - docs/sdks/otp/README.md
-  - docs/sdks/lookup/README.md
-  - USAGE.md
-  - .gitattributes
-  - src/ding/_hooks/sdkhooks.py
-  - src/ding/_hooks/types.py
-  - src/ding/_hooks/__init__.py
-  - CONTRIBUTING.md
+examples:
+  create-authentication:
+    speakeasy-default-create-authentication:
+      requestBody:
+        application/json: {"customer_uuid": "c9f826e0-deca-41ec-871f-ecd6e8efeb46", "phone_number": "+1234567890"}
+      responses:
+        "400":
+          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+  check:
+    speakeasy-default-check:
+      requestBody:
+        application/json: {"customer_uuid": "e0e7b0e9-739d-424b-922f-1c2cb48ab077", "authentication_uuid": "8f1196d5-806e-4b71-9b24-5f96ec052808", "check_code": "123456"}
+      responses:
+        "200":
+          application/json: {"status": "valid"}
+        "400":
+          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+  feedback:
+    speakeasy-default-feedback:
+      requestBody:
+        application/json: {"customer_uuid": "c0c405fa-6bcb-4094-9430-7d6e2428ff23", "phone_number": "+1234567890", "status": "onboarded"}
+      responses:
+        "200":
+          application/json: {"uuid": "123e4567-e89b-12d3-a456-4266141740a0"}
+        default:
+          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+  retry:
+    speakeasy-default-retry:
+      responses:
+        "200":
+          application/json: {"status": "approved", "remaining_retry": 3}
+        "400":
+          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+  lookup:
+    speakeasy-default-lookup:
+      parameters:
+        path:
+          phone_number: "<value>"
+        header:
+          customer-uuid: "6e93aa15-9177-4d09-8395-b69ce50db1c8"
+      responses:
+        "200":
+          application/json: {"phone_number": "+1234567890", "mcc": "310", "mnc": "410", "carrier": "AT&T", "country_code": "US", "line_type": "Mobile"}
+        "400":
+          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
