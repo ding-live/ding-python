@@ -3,10 +3,10 @@ id: 81c437b1-ab8d-4cec-8b8f-8f71d1bdb7a2
 management:
   docChecksum: c2a5d8222f4117f238343d6187ef2751
   docVersion: 1.0.0
-  speakeasyVersion: 1.392.1
-  generationVersion: 2.411.9
-  releaseVersion: 3.8.7
-  configChecksum: d97efb94f682a86b4a4d7e317803900f
+  speakeasyVersion: 1.396.6
+  generationVersion: 2.415.6
+  releaseVersion: 3.8.8
+  configChecksum: a4567745f2a23878cfb9c7434013fed0
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
@@ -14,7 +14,7 @@ management:
 features:
   python:
     additionalDependencies: 0.1.0
-    core: 4.8.7
+    core: 4.8.9
     examples: 2.81.3
     flattening: 2.81.1
     globalSecurity: 2.83.7
@@ -98,6 +98,7 @@ examples:
       responses:
         "400":
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+        "200": {}
   check:
     speakeasy-default-check:
       requestBody:
