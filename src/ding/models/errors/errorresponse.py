@@ -37,7 +37,22 @@ class Code(str, Enum):
 
 @dataclasses.dataclass
 class ErrorResponse(Exception):
-    r"""Bad Request"""
+    code: Optional[Code] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
+    r"""A machine-readable code that describes the error."""
+    message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
+    r"""A human-readable message that describes the error."""
+    doc_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('doc_url'), 'exclude': lambda f: f is None }})
+    r"""A link to the documentation that describes the error."""
+    
+
+    def __str__(self) -> str:
+        return utils.marshal_json(self, type(self))
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class ErrorResponse1(Exception):
     code: Optional[Code] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""A machine-readable code that describes the error."""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})

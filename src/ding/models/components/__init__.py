@@ -4,6 +4,7 @@ from .createauthenticationrequest import *
 from .createauthenticationresponse import *
 from .createcheckrequest import *
 from .createcheckresponse import *
+from .errorresponse import *
 from .feedbackrequest import *
 from .feedbackresponse import *
 from .lookupresponse import *
@@ -11,4 +12,4 @@ from .retryauthenticationrequest import *
 from .retryauthenticationresponse import *
 from .security import *
 
-__all__ = ["CreateAuthenticationRequest","CreateAuthenticationResponse","CreateCheckRequest","CreateCheckResponse","CreateCheckResponseStatus","DeviceType","FeedbackRequest","FeedbackRequestStatus","FeedbackResponse","LineType","LookupResponse","RetryAuthenticationRequest","RetryAuthenticationResponse","RetryAuthenticationResponseStatus","Security","Status"]
+__all__ = ["CreateAuthenticationRequest","CreateAuthenticationResponse","CreateCheckRequest","CreateCheckResponse","CreateCheckResponseStatus","DeviceType","ErrorResponse","FeedbackRequest","FeedbackRequestStatus","FeedbackResponse","LineType","LookupResponse","RetryAuthenticationRequest","RetryAuthenticationResponse","RetryAuthenticationResponseStatus","Security","Status"]

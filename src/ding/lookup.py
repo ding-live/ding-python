@@ -71,7 +71,7 @@ class Lookup:
         elif http_res.status_code == 400:
             # pylint: disable=no-else-return
             if utils.match_content_type(http_res.headers.get('Content-Type') or '', 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, errors.ErrorResponse)
+                out = utils.unmarshal_json(http_res.text, errors.ErrorResponse1)
                 raise out
             else:
                 content_type = http_res.headers.get('Content-Type')
