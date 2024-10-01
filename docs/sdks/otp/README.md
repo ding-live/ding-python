@@ -50,11 +50,10 @@ if res.create_authentication_response is not None:
 
 ### Errors
 
-| Error Object         | Status Code          | Content Type         |
+| Error Type           | Status Code          | Content Type         |
 | -------------------- | -------------------- | -------------------- |
 | errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 4xx-5xx              | */*                  |
-
+| errors.SDKError      | 4XX, 5XX             | \*/\*                |
 
 ## check
 
@@ -95,11 +94,10 @@ if res.create_check_response is not None:
 
 ### Errors
 
-| Error Object         | Status Code          | Content Type         |
+| Error Type           | Status Code          | Content Type         |
 | -------------------- | -------------------- | -------------------- |
 | errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 4xx-5xx              | */*                  |
-
+| errors.SDKError      | 4XX, 5XX             | \*/\*                |
 
 ## feedback
 
@@ -140,10 +138,9 @@ if res.feedback_response is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## retry
 
@@ -179,7 +176,7 @@ if res.retry_authentication_response is not None:
 
 ### Errors
 
-| Error Object         | Status Code          | Content Type         |
+| Error Type           | Status Code          | Content Type         |
 | -------------------- | -------------------- | -------------------- |
 | errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 4xx-5xx              | */*                  |
+| errors.SDKError      | 4XX, 5XX             | \*/\*                |
