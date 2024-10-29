@@ -16,6 +16,7 @@ s = ding.Ding(
 res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
     customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
     phone_number='+1234567890',
+    locale='fr-FR',
 ))
 
 if res.create_authentication_response is not None:
@@ -66,6 +67,74 @@ s = ding.Ding(
 res = s.otp.retry()
 
 if res.retry_authentication_response is not None:
+    # handle response
+    pass
+
+```
+
+### Send feedback
+
+Send feedback about the authentication process.
+
+
+```python
+import ding
+from ding.models import components
+
+s = ding.Ding(
+    api_key="YOUR_API_KEY",
+)
+
+
+res = s.otp.feedback(request=components.FeedbackRequest(
+    customer_uuid='c0c405fa-6bcb-4094-9430-7d6e2428ff23',
+    phone_number='+1234567890',
+    status=components.FeedbackRequestStatus.ONBOARDED,
+))
+
+if res.feedback_response is not None:
+    # handle response
+    pass
+
+```
+
+### Get authentication status
+
+Get the status of an authentication.
+
+
+```python
+import ding
+
+s = ding.Ding(
+    api_key="YOUR_API_KEY",
+)
+
+
+res = s.otp.get_authentication_status(auth_uuid='d8446450-f2fa-4dd9-806b-df5b8c661f23')
+
+if res.authentication_status_response is not None:
+    # handle response
+    pass
+
+```
+
+### Look up for phone number
+
+Perform a phone number lookup.
+
+
+```python
+import ding
+
+s = ding.Ding(
+    api_key="YOUR_API_KEY",
+)
+
+
+res = s.lookup.lookup(phone_number='<value>', customer_uuid='6e93aa15-9177-4d09-8395-b69ce50db1c8')
+
+if res.lookup_response is not None:
     # handle response
     pass
 

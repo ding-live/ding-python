@@ -10,6 +10,7 @@ Send OTP codes to your users using their phone numbers.
 * [create_authentication](#create_authentication) - Send a code
 * [check](#check) - Check a code
 * [feedback](#feedback) - Send feedback
+* [get_authentication_status](#get_authentication_status) - Get authentication status
 * [retry](#retry) - Perform a retry
 
 ## create_authentication
@@ -30,6 +31,7 @@ s = ding.Ding(
 res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
     customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
     phone_number='+1234567890',
+    locale='fr-FR',
 ))
 
 if res.create_authentication_response is not None:
@@ -50,10 +52,9 @@ if res.create_authentication_response is not None:
 
 ### Errors
 
-| Error Type           | Status Code          | Content Type         |
-| -------------------- | -------------------- | -------------------- |
-| errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 4XX, 5XX             | \*/\*                |
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## check
 
@@ -94,10 +95,9 @@ if res.create_check_response is not None:
 
 ### Errors
 
-| Error Type           | Status Code          | Content Type         |
-| -------------------- | -------------------- | -------------------- |
-| errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 4XX, 5XX             | \*/\*                |
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## feedback
 
@@ -142,6 +142,44 @@ if res.feedback_response is not None:
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## get_authentication_status
+
+Get authentication status
+
+### Example Usage
+
+```python
+import ding
+
+s = ding.Ding(
+    api_key="YOUR_API_KEY",
+)
+
+
+res = s.otp.get_authentication_status(auth_uuid='d8446450-f2fa-4dd9-806b-df5b8c661f23')
+
+if res.authentication_status_response is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `auth_uuid`        | *str*              | :heavy_check_mark: | N/A                |
+
+### Response
+
+**[operations.GetAuthenticationStatusResponse](../../models/operations/getauthenticationstatusresponse.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## retry
 
 Perform a retry
@@ -176,7 +214,6 @@ if res.retry_authentication_response is not None:
 
 ### Errors
 
-| Error Type           | Status Code          | Content Type         |
-| -------------------- | -------------------- | -------------------- |
-| errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 4XX, 5XX             | \*/\*                |
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

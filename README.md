@@ -52,6 +52,7 @@ s = ding.Ding(
 res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
     customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
     phone_number='+1234567890',
+    locale='fr-FR',
 ))
 
 if res.create_authentication_response is not None:
@@ -106,6 +107,74 @@ if res.retry_authentication_response is not None:
     pass
 
 ```
+
+### Send feedback
+
+Send feedback about the authentication process.
+
+
+```python
+import ding
+from ding.models import components
+
+s = ding.Ding(
+    api_key="YOUR_API_KEY",
+)
+
+
+res = s.otp.feedback(request=components.FeedbackRequest(
+    customer_uuid='c0c405fa-6bcb-4094-9430-7d6e2428ff23',
+    phone_number='+1234567890',
+    status=components.FeedbackRequestStatus.ONBOARDED,
+))
+
+if res.feedback_response is not None:
+    # handle response
+    pass
+
+```
+
+### Get authentication status
+
+Get the status of an authentication.
+
+
+```python
+import ding
+
+s = ding.Ding(
+    api_key="YOUR_API_KEY",
+)
+
+
+res = s.otp.get_authentication_status(auth_uuid='d8446450-f2fa-4dd9-806b-df5b8c661f23')
+
+if res.authentication_status_response is not None:
+    # handle response
+    pass
+
+```
+
+### Look up for phone number
+
+Perform a phone number lookup.
+
+
+```python
+import ding
+
+s = ding.Ding(
+    api_key="YOUR_API_KEY",
+)
+
+
+res = s.lookup.lookup(phone_number='<value>', customer_uuid='6e93aa15-9177-4d09-8395-b69ce50db1c8')
+
+if res.lookup_response is not None:
+    # handle response
+    pass
+
+```
 <!-- End SDK Example Usage [usage] -->
 
 <!-- Start Available Resources and Operations [operations] -->
@@ -117,13 +186,14 @@ if res.retry_authentication_response is not None:
 
 ### [lookup](docs/sdks/lookup/README.md)
 
-* [lookup](docs/sdks/lookup/README.md#lookup) - Perform a phone number lookup
+* [lookup](docs/sdks/lookup/README.md#lookup) - Look up for phone number
 
 ### [otp](docs/sdks/otp/README.md)
 
 * [create_authentication](docs/sdks/otp/README.md#create_authentication) - Send a code
 * [check](docs/sdks/otp/README.md#check) - Check a code
 * [feedback](docs/sdks/otp/README.md#feedback) - Send feedback
+* [get_authentication_status](docs/sdks/otp/README.md#get_authentication_status) - Get authentication status
 * [retry](docs/sdks/otp/README.md#retry) - Perform a retry
 
 </details>
@@ -145,10 +215,9 @@ By default, an API error will raise a errors.SDKError exception, which has the f
 
 When custom error responses are specified for an operation, the SDK may also raise their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_authentication` method may raise the following exceptions:
 
-| Error Type           | Status Code          | Content Type         |
-| -------------------- | -------------------- | -------------------- |
-| errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 4XX, 5XX             | \*/\*                |
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ### Example
 
@@ -165,11 +234,9 @@ try:
     res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
     customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
     phone_number='+1234567890',
+    locale='fr-FR',
 ))
 
-except errors.ErrorResponse as e:
-    # handle exception
-    raise(e)
 except errors.SDKError as e:
     # handle exception
     raise(e)
@@ -207,6 +274,7 @@ s = ding.Ding(
 res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
     customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
     phone_number='+1234567890',
+    locale='fr-FR',
 ))
 
 if res.create_authentication_response is not None:
@@ -232,6 +300,7 @@ s = ding.Ding(
 res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
     customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
     phone_number='+1234567890',
+    locale='fr-FR',
 ))
 
 if res.create_authentication_response is not None:
@@ -281,6 +350,7 @@ s = ding.Ding(
 res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
     customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
     phone_number='+1234567890',
+    locale='fr-FR',
 ))
 
 if res.create_authentication_response is not None:

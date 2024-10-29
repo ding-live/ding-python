@@ -4,6 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ...models.components import createcheckresponse as components_createcheckresponse
+from ...models.components import errorresponse as components_errorresponse
 from typing import Optional
 
 
@@ -17,5 +18,7 @@ class CheckResponse:
     r"""Raw HTTP response; suitable for custom response parsing"""
     create_check_response: Optional[components_createcheckresponse.CreateCheckResponse] = dataclasses.field(default=None)
     r"""OK"""
+    error_response: Optional[components_errorresponse.ErrorResponse] = dataclasses.field(default=None)
+    r"""Bad Request"""
     
 

@@ -7,11 +7,11 @@ Retrieve up-to-date metadata about a specific phone number
 
 ### Available Operations
 
-* [lookup](#lookup) - Perform a phone number lookup
+* [lookup](#lookup) - Look up for phone number
 
 ## lookup
 
-Perform a phone number lookup
+Look up for phone number
 
 ### Example Usage
 
@@ -44,7 +44,6 @@ if res.lookup_response is not None:
 
 ### Errors
 
-| Error Type            | Status Code           | Content Type          |
-| --------------------- | --------------------- | --------------------- |
-| errors.ErrorResponse1 | 400                   | application/json      |
-| errors.SDKError       | 4XX, 5XX              | \*/\*                 |
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |

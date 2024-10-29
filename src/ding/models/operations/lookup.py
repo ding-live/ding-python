@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.components import errorresponse as components_errorresponse
 from ...models.components import lookupresponse as components_lookupresponse
 from typing import Optional
 
@@ -25,5 +26,7 @@ class LookupResponse:
     r"""Raw HTTP response; suitable for custom response parsing"""
     lookup_response: Optional[components_lookupresponse.LookupResponse] = dataclasses.field(default=None)
     r"""OK"""
+    error_response: Optional[components_errorresponse.ErrorResponse] = dataclasses.field(default=None)
+    r"""Bad Request"""
     
 

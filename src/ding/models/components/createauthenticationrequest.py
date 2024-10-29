@@ -30,6 +30,8 @@ class CreateAuthenticationRequest:
     r"""The type of device the user is using."""
     app_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('app_version'), 'exclude': lambda f: f is None }})
     r"""The version of your application."""
+    sender_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sender_id'), 'exclude': lambda f: f is None }})
+    r"""The Sender ID to use when sending the message."""
     callback_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('callback_url'), 'exclude': lambda f: f is None }})
     r"""A webhook URL to which delivery statuses will be sent."""
     app_realm: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('app_realm'), 'exclude': lambda f: f is None }})
@@ -44,5 +46,7 @@ class CreateAuthenticationRequest:
     r"""The template id associated with the message content variant to be sent."""
     correlation_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('correlation_id'), 'exclude': lambda f: f is None }})
     r"""A unique, user-defined identifier that will be included in webhook events"""
+    locale: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('locale'), 'exclude': lambda f: f is None }})
+    r"""A BCP-47 locale indicating the language the SMS should be sent to; if this is not set, the SMS will be sent to the language specified by the country code of the message. If we don't support the language set, the message will be sent in US English (en-US)."""
     
 

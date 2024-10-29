@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 81c437b1-ab8d-4cec-8b8f-8f71d1bdb7a2
 management:
-  docChecksum: c2a5d8222f4117f238343d6187ef2751
+  docChecksum: 80145f0a6cc3db568a7c7bbd434cf444
   docVersion: 1.0.0
-  speakeasyVersion: 1.419.2
-  generationVersion: 2.438.15
-  releaseVersion: 3.8.11
-  configChecksum: 490aec15ce48ff2deba89136152a81c5
+  speakeasyVersion: 1.423.1
+  generationVersion: 2.442.11
+  releaseVersion: 3.9.0
+  configChecksum: 3c9450052bd8be91c6d75dfc221bb4d9
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
@@ -23,17 +23,33 @@ features:
     globalServerURLs: 2.82.2
     responseFormat: 0.1.0
     sdkHooks: 0.1.0
+    unions: 2.82.9
 generatedFiles:
   - .gitattributes
   - CONTRIBUTING.md
   - USAGE.md
+  - docs/models/components/attempt.md
+  - docs/models/components/authenticationstatusresponse.md
+  - docs/models/components/authenticationstatusresponsedevicetype.md
+  - docs/models/components/authenticationstatusresponseschemaseventstype.md
+  - docs/models/components/authenticationstatusresponseschemasstatus.md
+  - docs/models/components/authenticationstatusresponseschemastype.md
+  - docs/models/components/authenticationstatusresponsestatus.md
+  - docs/models/components/authenticationstatusresponsetype.md
+  - docs/models/components/balanceupdate.md
+  - docs/models/components/balanceupdatetype.md
+  - docs/models/components/capability.md
+  - docs/models/components/check.md
+  - docs/models/components/checkstatus.md
+  - docs/models/components/code.md
   - docs/models/components/createauthenticationrequest.md
   - docs/models/components/createauthenticationresponse.md
   - docs/models/components/createcheckrequest.md
   - docs/models/components/createcheckresponse.md
-  - docs/models/components/createcheckresponsestatus.md
+  - docs/models/components/deliverystatus.md
   - docs/models/components/devicetype.md
   - docs/models/components/errorresponse.md
+  - docs/models/components/events.md
   - docs/models/components/feedbackrequest.md
   - docs/models/components/feedbackrequeststatus.md
   - docs/models/components/feedbackresponse.md
@@ -43,13 +59,14 @@ generatedFiles:
   - docs/models/components/retryauthenticationresponse.md
   - docs/models/components/retryauthenticationresponsestatus.md
   - docs/models/components/security.md
+  - docs/models/components/signals.md
   - docs/models/components/status.md
-  - docs/models/errors/code.md
-  - docs/models/errors/errorresponse.md
-  - docs/models/errors/errorresponse1.md
+  - docs/models/components/type.md
   - docs/models/operations/checkresponse.md
   - docs/models/operations/createauthenticationresponse.md
   - docs/models/operations/feedbackresponse.md
+  - docs/models/operations/getauthenticationstatusrequest.md
+  - docs/models/operations/getauthenticationstatusresponse.md
   - docs/models/operations/lookuprequest.md
   - docs/models/operations/lookupresponse.md
   - docs/models/operations/retryresponse.md
@@ -67,6 +84,8 @@ generatedFiles:
   - src/ding/lookup.py
   - src/ding/models/__init__.py
   - src/ding/models/components/__init__.py
+  - src/ding/models/components/authenticationstatusresponse.py
+  - src/ding/models/components/checkstatus.py
   - src/ding/models/components/createauthenticationrequest.py
   - src/ding/models/components/createauthenticationresponse.py
   - src/ding/models/components/createcheckrequest.py
@@ -79,12 +98,12 @@ generatedFiles:
   - src/ding/models/components/retryauthenticationresponse.py
   - src/ding/models/components/security.py
   - src/ding/models/errors/__init__.py
-  - src/ding/models/errors/errorresponse.py
   - src/ding/models/errors/sdkerror.py
   - src/ding/models/operations/__init__.py
   - src/ding/models/operations/check.py
   - src/ding/models/operations/create_authentication.py
   - src/ding/models/operations/feedback.py
+  - src/ding/models/operations/getauthenticationstatus.py
   - src/ding/models/operations/lookup.py
   - src/ding/models/operations/retry.py
   - src/ding/otp.py
@@ -97,11 +116,13 @@ examples:
   create-authentication:
     speakeasy-default-create-authentication:
       requestBody:
-        application/json: {"customer_uuid": "c9f826e0-deca-41ec-871f-ecd6e8efeb46", "phone_number": "+1234567890"}
+        application/json: {"customer_uuid": "c9f826e0-deca-41ec-871f-ecd6e8efeb46", "phone_number": "+1234567890", "locale": "fr-FR"}
       responses:
         "400":
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
         "200": {}
+        default:
+          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
   check:
     speakeasy-default-check:
       requestBody:
@@ -110,6 +131,8 @@ examples:
         "200":
           application/json: {"status": "valid"}
         "400":
+          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+        default:
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
   feedback:
     speakeasy-default-feedback:
@@ -127,6 +150,8 @@ examples:
           application/json: {"status": "approved", "remaining_retry": 3}
         "400":
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+        default:
+          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
   lookup:
     speakeasy-default-lookup:
       parameters:
@@ -138,4 +163,16 @@ examples:
         "200":
           application/json: {"phone_number": "+1234567890", "mcc": "310", "mnc": "410", "carrier": "AT&T", "country_code": "US", "line_type": "Mobile"}
         "400":
+          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+        default:
+          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+  getAuthenticationStatus:
+    speakeasy-default-get-authentication-status:
+      parameters:
+        path:
+          auth_uuid: "d8446450-f2fa-4dd9-806b-df5b8c661f23"
+      responses:
+        "200":
+          application/json: {"phone_number": "+1234567890", "events": []}
+        default:
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
