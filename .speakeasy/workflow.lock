@@ -1,0 +1,31 @@
+speakeasyVersion: 1.423.2
+sources:
+    my-source:
+        sourceNamespace: my-source
+        sourceRevisionDigest: sha256:58fa58d3d3393ca9dfe0a8c691ecc178471085c11ab40af2ffb9457ff87ab7c9
+        sourceBlobDigest: sha256:408f69a3052eeaa99509ce0811301cbf4e12aab87613930f6d2fb41f94803bf5
+        tags:
+            - latest
+            - main
+targets:
+    ding-api-client:
+        source: my-source
+        sourceNamespace: my-source
+        sourceRevisionDigest: sha256:58fa58d3d3393ca9dfe0a8c691ecc178471085c11ab40af2ffb9457ff87ab7c9
+        sourceBlobDigest: sha256:408f69a3052eeaa99509ce0811301cbf4e12aab87613930f6d2fb41f94803bf5
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        my-source:
+            inputs:
+                - location: https://raw.githubusercontent.com/ding-live/openapi/main/ding.yaml
+            registry:
+                location: registry.speakeasyapi.dev/ding/ding/my-source
+    targets:
+        ding-api-client:
+            target: python
+            source: my-source
+            publish:
+                pypi:
+                    token: $PYPI_TOKEN
