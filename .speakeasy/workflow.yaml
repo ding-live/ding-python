@@ -1,0 +1,12 @@
+workflowVersion: 1.0.0
+sources:
+    my-source:
+        inputs:
+            - location: https://raw.githubusercontent.com/ding-live/openapi/main/ding.yaml
+targets:
+    ding-api-client:
+        target: python
+        source: my-source
+        publish:
+            pypi:
+                token: $PYPI_TOKEN
