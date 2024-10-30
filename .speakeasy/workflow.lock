@@ -1,9 +1,9 @@
-speakeasyVersion: 1.423.2
+speakeasyVersion: 1.423.4
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:58fa58d3d3393ca9dfe0a8c691ecc178471085c11ab40af2ffb9457ff87ab7c9
-        sourceBlobDigest: sha256:408f69a3052eeaa99509ce0811301cbf4e12aab87613930f6d2fb41f94803bf5
+        sourceRevisionDigest: sha256:b63a7813fad57cc79110d54b52f4861b8ffe52ecdff9849975fd326f89c1e31c
+        sourceBlobDigest: sha256:323bc59bcca5ee8f29fae0166ebe1eca5b054a01c0d1339e7d698ed6ca59e11e
         tags:
             - latest
             - main
@@ -11,8 +11,10 @@ targets:
     ding-api-client:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:58fa58d3d3393ca9dfe0a8c691ecc178471085c11ab40af2ffb9457ff87ab7c9
-        sourceBlobDigest: sha256:408f69a3052eeaa99509ce0811301cbf4e12aab87613930f6d2fb41f94803bf5
+        sourceRevisionDigest: sha256:b63a7813fad57cc79110d54b52f4861b8ffe52ecdff9849975fd326f89c1e31c
+        sourceBlobDigest: sha256:323bc59bcca5ee8f29fae0166ebe1eca5b054a01c0d1339e7d698ed6ca59e11e
+        codeSamplesNamespace: my-source-code-samples
+        codeSamplesRevisionDigest: sha256:89ab5e3a1f35b7c83bbaabc4726ce777f4c7bc63fc801fe5df95533d78bd4aef
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -29,3 +31,7 @@ workflow:
             publish:
                 pypi:
                     token: $PYPI_TOKEN
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/ding/ding/my-source-code-samples
+                blocking: false

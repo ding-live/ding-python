@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ...models.components import authenticationstatusresponse as components_authenticationstatusresponse
-from ...models.components import errorresponse as components_errorresponse
 from typing import Optional
 
 
@@ -25,7 +24,5 @@ class GetAuthenticationStatusResponse:
     r"""Raw HTTP response; suitable for custom response parsing"""
     authentication_status_response: Optional[components_authenticationstatusresponse.AuthenticationStatusResponse] = dataclasses.field(default=None)
     r"""OK"""
-    error_response: Optional[components_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     
 

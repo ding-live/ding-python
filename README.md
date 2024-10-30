@@ -215,9 +215,10 @@ By default, an API error will raise a errors.SDKError exception, which has the f
 
 When custom error responses are specified for an operation, the SDK may also raise their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_authentication` method may raise the following exceptions:
 
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
+| Error Type           | Status Code          | Content Type         |
+| -------------------- | -------------------- | -------------------- |
+| errors.ErrorResponse | 400                  | application/json     |
+| errors.SDKError      | 4XX, 5XX             | \*/\*                |
 
 ### Example
 
@@ -237,6 +238,9 @@ try:
     locale='fr-FR',
 ))
 
+except errors.ErrorResponse as e:
+    # handle exception
+    raise(e)
 except errors.SDKError as e:
     # handle exception
     raise(e)

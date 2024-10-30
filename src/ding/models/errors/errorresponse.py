@@ -36,8 +36,9 @@ class Code(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
-class ErrorResponse:
+class ErrorResponse(Exception):
     code: Optional[Code] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""A machine-readable code that describes the error."""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
@@ -46,3 +47,5 @@ class ErrorResponse:
     r"""A link to the documentation that describes the error."""
     
 
+    def __str__(self) -> str:
+        return utils.marshal_json(self, type(self))

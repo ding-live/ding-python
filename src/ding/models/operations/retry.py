@@ -3,7 +3,6 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ...models.components import errorresponse as components_errorresponse
 from ...models.components import retryauthenticationresponse as components_retryauthenticationresponse
 from typing import Optional
 
@@ -18,7 +17,5 @@ class RetryResponse:
     r"""Raw HTTP response; suitable for custom response parsing"""
     retry_authentication_response: Optional[components_retryauthenticationresponse.RetryAuthenticationResponse] = dataclasses.field(default=None)
     r"""OK"""
-    error_response: Optional[components_errorresponse.ErrorResponse] = dataclasses.field(default=None)
-    r"""Bad Request"""
     
 

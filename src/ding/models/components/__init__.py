@@ -6,7 +6,6 @@ from .createauthenticationrequest import *
 from .createauthenticationresponse import *
 from .createcheckrequest import *
 from .createcheckresponse import *
-from .errorresponse import *
 from .feedbackrequest import *
 from .feedbackresponse import *
 from .lookupresponse import *
@@ -14,4 +13,4 @@ from .retryauthenticationrequest import *
 from .retryauthenticationresponse import *
 from .security import *
 
-__all__ = ["Attempt","AuthenticationStatusResponse","AuthenticationStatusResponseDeviceType","AuthenticationStatusResponseSchemasEventsType","AuthenticationStatusResponseSchemasStatus","AuthenticationStatusResponseSchemasType","AuthenticationStatusResponseStatus","AuthenticationStatusResponseType","BalanceUpdate","BalanceUpdateType","Capability","Check","CheckStatus","Code","CreateAuthenticationRequest","CreateAuthenticationResponse","CreateCheckRequest","CreateCheckResponse","DeliveryStatus","DeviceType","ErrorResponse","Events","FeedbackRequest","FeedbackRequestStatus","FeedbackResponse","LineType","LookupResponse","RetryAuthenticationRequest","RetryAuthenticationResponse","RetryAuthenticationResponseStatus","Security","Signals","Status","Type"]
+__all__ = ["Attempt","AuthenticationStatusResponse","AuthenticationStatusResponseDeviceType","AuthenticationStatusResponseSchemasEventsType","AuthenticationStatusResponseSchemasStatus","AuthenticationStatusResponseSchemasType","AuthenticationStatusResponseStatus","AuthenticationStatusResponseType","BalanceUpdate","BalanceUpdateType","Capability","Check","CheckStatus","CreateAuthenticationRequest","CreateAuthenticationResponse","CreateCheckRequest","CreateCheckResponse","DeliveryStatus","DeviceType","Events","FeedbackRequest","FeedbackRequestStatus","FeedbackResponse","LineType","LookupResponse","RetryAuthenticationRequest","RetryAuthenticationResponse","RetryAuthenticationResponseStatus","Security","Signals","Status","Type"]
