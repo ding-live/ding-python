@@ -11,7 +11,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
 python:
-  version: 3.9.7
+  version: 3.9.8
   additionalDependencies:
     dependencies: {}
     extraDependencies:
