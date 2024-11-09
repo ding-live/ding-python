@@ -215,10 +215,10 @@ By default, an API error will raise a errors.SDKError exception, which has the f
 
 When custom error responses are specified for an operation, the SDK may also raise their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_authentication` method may raise the following exceptions:
 
-| Error Type           | Status Code          | Content Type         |
-| -------------------- | -------------------- | -------------------- |
-| errors.ErrorResponse | 400                  | application/json     |
-| errors.SDKError      | 4XX, 5XX             | \*/\*                |
+| Error Type           | Status Code | Content Type     |
+| -------------------- | ----------- | ---------------- |
+| errors.ErrorResponse | 400         | application/json |
+| errors.SDKError      | 4XX, 5XX    | \*/\*            |
 
 ### Example
 
@@ -254,39 +254,6 @@ if res.create_authentication_response is not None:
 
 <!-- Start Server Selection [server] -->
 ## Server Selection
-
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://api.ding.live/v1` | None |
-
-#### Example
-
-```python
-import ding
-from ding.models import components
-
-s = ding.Ding(
-    server_idx=0,
-    api_key="YOUR_API_KEY",
-)
-
-
-res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
-    customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
-    phone_number='+1234567890',
-    locale='fr-FR',
-))
-
-if res.create_authentication_response is not None:
-    # handle response
-    pass
-
-```
-
 
 ### Override Server URL Per-Client
 
@@ -337,9 +304,9 @@ s = ding.Ding(client=http_client)
 
 This SDK supports the following security scheme globally:
 
-| Name      | Type      | Scheme    |
-| --------- | --------- | --------- |
-| `api_key` | apiKey    | API key   |
+| Name      | Type   | Scheme  |
+| --------- | ------ | ------- |
+| `api_key` | apiKey | API key |
 
 To authenticate with the API the `api_key` parameter must be set when initializing the SDK client instance. For example:
 ```python

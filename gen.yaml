@@ -12,13 +12,14 @@ generation:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
 python:
-  version: 3.9.11
+  version: 3.9.12
   additionalDependencies:
     dependencies: {}
     extraDependencies:
       dev: {}
   author: Ding
   clientServerStatusCodesAsErrors: true
+  defaultErrorName: SDKError
   description: Python Client SDK
   flattenGlobalSecurity: true
   imports:
