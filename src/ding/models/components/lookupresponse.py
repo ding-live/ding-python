@@ -66,6 +66,8 @@ class LookupResponse:
     r"""The ISO 3166-1 alpha-2 country code of the phone number."""
     number_ported: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_ported'), 'exclude': lambda f: f is None }})
     r"""Whether the phone number has been ported."""
+    temporary_phone_number: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('temporary_phone_number'), 'exclude': lambda f: f is None }})
+    r"""Whether the phone number is in our database of disposable, temporary phone numbers"""
     line_type: Optional[LineType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_type'), 'exclude': lambda f: f is None }})
     r"""The type of phone line.
       * `CallingCards` - Numbers that are associated with providers of pre-paid domestic and international calling cards.
