@@ -3,10 +3,10 @@ id: 81c437b1-ab8d-4cec-8b8f-8f71d1bdb7a2
 management:
   docChecksum: de3d2693189957170dadac38413b020f
   docVersion: 1.0.0
-  speakeasyVersion: 1.438.3
+  speakeasyVersion: 1.440.0
   generationVersion: 2.457.9
-  releaseVersion: 3.9.17
-  configChecksum: 016c26292d8d0214e326e0851469dd58
+  releaseVersion: 3.9.18
+  configChecksum: 837d66aaeaed1544013c4e992d1ac09d
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
