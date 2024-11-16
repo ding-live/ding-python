@@ -13,8 +13,10 @@ from typing import List, Optional, Union
 
 class AuthenticationStatusResponseDeviceType(str, Enum):
     r"""The type of device the user is using."""
-    IOS = 'IOS'
     ANDROID = 'ANDROID'
+    IOS = 'IOS'
+    IPADOS = 'IPADOS'
+    TVOS = 'TVOS'
     WEB = 'WEB'
 
 
