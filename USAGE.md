@@ -9,7 +9,7 @@ import ding
 from ding.models import components
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 
@@ -35,7 +35,7 @@ import ding
 from ding.models import components
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 
@@ -60,7 +60,7 @@ Perform a retry if a user has not received the code.
 import ding
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 
@@ -82,7 +82,7 @@ import ding
 from ding.models import components
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 
@@ -107,7 +107,7 @@ Get the status of an authentication.
 import ding
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 
@@ -128,7 +128,7 @@ Perform a phone number lookup.
 import ding
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 

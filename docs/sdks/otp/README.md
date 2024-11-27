@@ -24,7 +24,7 @@ import ding
 from ding.models import components
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 
@@ -68,7 +68,7 @@ import ding
 from ding.models import components
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 
@@ -112,7 +112,7 @@ import ding
 from ding.models import components
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 
@@ -155,7 +155,7 @@ Get authentication status
 import ding
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 
@@ -194,7 +194,7 @@ Perform a retry
 import ding
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 

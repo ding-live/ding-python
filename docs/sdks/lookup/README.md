@@ -19,7 +19,7 @@ Look up for phone number
 import ding
 
 s = ding.Ding(
-    api_key="YOUR_API_KEY",
+    api_key='YOUR_API_KEY',
 )
 
 
