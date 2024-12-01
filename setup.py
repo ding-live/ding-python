@@ -19,7 +19,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name='ding_api_client',
-    version='3.9.33',
+    version='3.9.34',
     author='Ding',
     description='Python Client SDK',
     url='https://github.com/ding-live/ding-python.git',
