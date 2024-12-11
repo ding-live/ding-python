@@ -4,13 +4,19 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ...models.components import lookupresponse as components_lookupresponse
-from typing import Optional
+from enum import Enum
+from typing import List, Optional
+
+
+class Type(str, Enum):
+    CNAM = 'cnam'
 
 
 @dataclasses.dataclass
 class LookupRequest:
     phone_number: str = dataclasses.field(metadata={'path_param': { 'field_name': 'phone_number', 'style': 'simple', 'explode': False }})
     customer_uuid: str = dataclasses.field(metadata={'header': { 'field_name': 'customer-uuid', 'style': 'simple', 'explode': False }})
+    type: Optional[List[Type]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
     
 
 

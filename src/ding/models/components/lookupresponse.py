@@ -60,6 +60,8 @@ class LookupResponse:
     r"""The mobile country code of the phone number."""
     mnc: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mnc'), 'exclude': lambda f: f is None }})
     r"""The mobile network code of the phone number."""
+    caller_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('caller_name'), 'exclude': lambda f: f is None }})
+    r"""The CNAM (Caller ID Name) associated with the phone number. Contact us if you need to use this functionality. Once enabled, put `cnam` option to `type` query parameter."""
     carrier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('carrier'), 'exclude': lambda f: f is None }})
     r"""The carrier of the phone number."""
     country_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country_code'), 'exclude': lambda f: f is None }})

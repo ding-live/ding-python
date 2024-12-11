@@ -5,7 +5,7 @@ from .sdkconfiguration import SDKConfiguration
 from ding import utils
 from ding._hooks import AfterErrorContext, AfterSuccessContext, BeforeRequestContext, HookContext
 from ding.models import components, errors, operations
-from typing import Optional
+from typing import List, Optional
 
 class Lookup:
     r"""Retrieve up-to-date metadata about a specific phone number"""
@@ -16,11 +16,12 @@ class Lookup:
         
     
     
-    def lookup(self, phone_number: str, customer_uuid: str) -> operations.LookupResponse:
+    def lookup(self, phone_number: str, customer_uuid: str, type_: Optional[List[operations.Type]] = None) -> operations.LookupResponse:
         r"""Look up for phone number"""
         hook_ctx = HookContext(operation_id='lookup', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.LookupRequest(
             phone_number=phone_number,
+            type=type_,
             customer_uuid=customer_uuid,
         )
         
@@ -34,6 +35,7 @@ class Lookup:
             headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers = { **utils.get_headers(request), **headers }
+        query_params = { **utils.get_query_params(request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         client = self.sdk_configuration.client

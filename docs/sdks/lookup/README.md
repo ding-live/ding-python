@@ -33,10 +33,11 @@ if res.lookup_response is not None:
 
 ### Parameters
 
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `phone_number`     | *str*              | :heavy_check_mark: | N/A                |
-| `customer_uuid`    | *str*              | :heavy_check_mark: | N/A                |
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `phone_number`                                           | *str*                                                    | :heavy_check_mark:                                       | N/A                                                      |
+| `customer_uuid`                                          | *str*                                                    | :heavy_check_mark:                                       | N/A                                                      |
+| `type`                                                   | List[[operations.Type](../../models/operations/type.md)] | :heavy_minus_sign:                                       | N/A                                                      |
 
 ### Response
 

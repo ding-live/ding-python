@@ -7,4 +7,4 @@ from .getauthenticationstatus import *
 from .lookup import *
 from .retry import *
 
-__all__ = ["CheckResponse","CreateAuthenticationResponse","FeedbackResponse","GetAuthenticationStatusRequest","GetAuthenticationStatusResponse","LookupRequest","LookupResponse","RetryResponse"]
+__all__ = ["CheckResponse","CreateAuthenticationResponse","FeedbackResponse","GetAuthenticationStatusRequest","GetAuthenticationStatusResponse","LookupRequest","LookupResponse","RetryResponse","Type"]
