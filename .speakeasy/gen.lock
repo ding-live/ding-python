@@ -3,10 +3,10 @@ id: 81c437b1-ab8d-4cec-8b8f-8f71d1bdb7a2
 management:
   docChecksum: 7b0a21df5c4526c3e13357d16d9397df
   docVersion: 1.0.0
-  speakeasyVersion: 1.469.1
-  generationVersion: 2.493.21
-  releaseVersion: 3.9.82
-  configChecksum: acba3db8287c804b6554f9cfe599d9d1
+  speakeasyVersion: 1.469.2
+  generationVersion: 2.493.23
+  releaseVersion: 3.9.83
+  configChecksum: 029eebe75635176ff2bae74062bcc420
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
@@ -116,34 +116,38 @@ examples:
   create-authentication:
     speakeasy-default-create-authentication:
       requestBody:
-        application/json: {"customer_uuid": "c9f826e0-deca-41ec-871f-ecd6e8efeb46", "phone_number": "+1234567890", "locale": "fr-FR"}
+        application/json: {"customer_uuid": "cf2edc1c-7fc6-48fb-86da-b7508c6b7b71", "phone_number": "+1234567890", "locale": "fr-FR"}
       responses:
-        "400":
-          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
         "200":
           application/json: {}
-        default:
+        "400":
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
   check:
     speakeasy-default-check:
       requestBody:
-        application/json: {"customer_uuid": "e0e7b0e9-739d-424b-922f-1c2cb48ab077", "authentication_uuid": "8f1196d5-806e-4b71-9b24-5f96ec052808", "check_code": "123456"}
+        application/json: {"customer_uuid": "eebe792b-2fcc-44a0-87f1-650e79259e02", "authentication_uuid": "64f66a7c-4b2c-4131-a8ff-d5b954cca05f", "check_code": "123456"}
       responses:
         "200":
           application/json: {"status": "valid"}
         "400":
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
-        default:
-          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
   feedback:
     speakeasy-default-feedback:
       requestBody:
-        application/json: {"customer_uuid": "c0c405fa-6bcb-4094-9430-7d6e2428ff23", "phone_number": "+1234567890", "status": "onboarded"}
+        application/json: {"customer_uuid": "cc0f6c04-40de-448f-8301-3cb0e6565dff", "phone_number": "+1234567890", "status": "onboarded"}
       responses:
         "200":
           application/json: {"uuid": "123e4567-e89b-12d3-a456-4266141740a0"}
-        default:
+        "400":
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+  getAuthenticationStatus:
+    speakeasy-default-get-authentication-status:
+      parameters:
+        path:
+          auth_uuid: "d8446450-f2fa-4dd9-806b-df5b8c661f23"
+      responses:
+        "200":
+          application/json: {"phone_number": "+1234567890", "events": [{"content": "Your code is 123456"}]}
         "400":
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
   retry:
@@ -153,8 +157,6 @@ examples:
           application/json: {"status": "approved", "remaining_retry": 3}
         "400":
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
-        default:
-          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
   lookup:
     speakeasy-default-lookup:
       parameters:
@@ -162,24 +164,11 @@ examples:
           phone_number: "<value>"
         query: {}
         header:
-          customer-uuid: "6e93aa15-9177-4d09-8395-b69ce50db1c8"
+          customer-uuid: "69a197d9-356c-45d1-a807-41874e16b555"
       responses:
         "200":
           application/json: {"phone_number": "+1234567890", "mcc": "310", "mnc": "410", "carrier": "AT&T", "country_code": "US", "line_type": "Mobile"}
         "400":
           application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
-        default:
-          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
-  getAuthenticationStatus:
-    speakeasy-default-get-authentication-status:
-      parameters:
-        path:
-          auth_uuid: "d8446450-f2fa-4dd9-806b-df5b8c661f23"
-      responses:
-        "200":
-          application/json: {"phone_number": "+1234567890", "events": []}
-        default:
-          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
-        "400":
-          application/json: {"code": "invalid_phone_number", "message": "+0 is not a valid phone number", "doc_url": "https://docs.prelude.so/api-reference/errors#invalid_phone_number"}
+examplesVersion: 1.0.0
 generatedTests: {}

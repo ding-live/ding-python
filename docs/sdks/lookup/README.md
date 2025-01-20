@@ -23,7 +23,7 @@ s = ding.Ding(
 )
 
 
-res = s.lookup.lookup(phone_number='<value>', customer_uuid='6e93aa15-9177-4d09-8395-b69ce50db1c8')
+res = s.lookup.lookup(phone_number='<value>', customer_uuid='69a197d9-356c-45d1-a807-41874e16b555')
 
 if res.lookup_response is not None:
     # handle response

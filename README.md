@@ -55,7 +55,7 @@ s = ding.Ding(
 
 
 res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
-    customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
+    customer_uuid='cf2edc1c-7fc6-48fb-86da-b7508c6b7b71',
     phone_number='+1234567890',
     locale='fr-FR',
 ))
@@ -81,8 +81,8 @@ s = ding.Ding(
 
 
 res = s.otp.check(request=components.CreateCheckRequest(
-    customer_uuid='e0e7b0e9-739d-424b-922f-1c2cb48ab077',
-    authentication_uuid='8f1196d5-806e-4b71-9b24-5f96ec052808',
+    customer_uuid='eebe792b-2fcc-44a0-87f1-650e79259e02',
+    authentication_uuid='64f66a7c-4b2c-4131-a8ff-d5b954cca05f',
     check_code='123456',
 ))
 
@@ -128,7 +128,7 @@ s = ding.Ding(
 
 
 res = s.otp.feedback(request=components.FeedbackRequest(
-    customer_uuid='c0c405fa-6bcb-4094-9430-7d6e2428ff23',
+    customer_uuid='cc0f6c04-40de-448f-8301-3cb0e6565dff',
     phone_number='+1234567890',
     status=components.FeedbackRequestStatus.ONBOARDED,
 ))
@@ -173,7 +173,7 @@ s = ding.Ding(
 )
 
 
-res = s.lookup.lookup(phone_number='<value>', customer_uuid='6e93aa15-9177-4d09-8395-b69ce50db1c8')
+res = s.lookup.lookup(phone_number='<value>', customer_uuid='69a197d9-356c-45d1-a807-41874e16b555')
 
 if res.lookup_response is not None:
     # handle response
@@ -238,7 +238,7 @@ s = ding.Ding(
 res = None
 try:
     res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
-    customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
+    customer_uuid='cf2edc1c-7fc6-48fb-86da-b7508c6b7b71',
     phone_number='+1234567890',
     locale='fr-FR',
 ))
@@ -274,7 +274,7 @@ s = ding.Ding(
 
 
 res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
-    customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
+    customer_uuid='cf2edc1c-7fc6-48fb-86da-b7508c6b7b71',
     phone_number='+1234567890',
     locale='fr-FR',
 ))
@@ -324,7 +324,7 @@ s = ding.Ding(
 
 
 res = s.otp.create_authentication(request=components.CreateAuthenticationRequest(
-    customer_uuid='c9f826e0-deca-41ec-871f-ecd6e8efeb46',
+    customer_uuid='cf2edc1c-7fc6-48fb-86da-b7508c6b7b71',
     phone_number='+1234567890',
     locale='fr-FR',
 ))
