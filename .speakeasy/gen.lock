@@ -5,8 +5,8 @@ management:
   docVersion: 1.0.0
   speakeasyVersion: 1.493.0
   generationVersion: 2.512.4
-  releaseVersion: 3.9.110
-  configChecksum: 522a698e8d056eba86bcb68b0013756f
+  releaseVersion: 3.9.111
+  configChecksum: 58ac9044fb0373b8de28e911380277c0
   repoURL: https://github.com/ding-live/ding-python.git
   repoSubDirectory: .
   installationURL: https://github.com/ding-live/ding-python.git
